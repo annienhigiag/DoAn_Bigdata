@@ -37,23 +37,27 @@ Mô hình được xây dựng theo kiến trúc Pipeline chuẩn của **Apache
 
 ## 2. Kết quả Đánh giá Mô hình trên Tập Kiểm thử (Test Set Metrics)
 
-Dữ liệu được chia theo tỷ lệ **80% Huấn luyện (Train)** và **20% Kiểm thử (Test)** với `seed=42`.  
-Đánh giá độc lập thông qua `MulticlassClassificationEvaluator`:
+> **Cập nhật:** các số liệu cũ ở mục này (Accuracy 88,67%, confusion matrix 1.350 mẫu) không tái tạo được từ code:
+> bản cũ nhân bản 45 câu mẫu 150 lần rồi mới chia train/test nên tập test trùng với tập train (rò rỉ dữ liệu),
+> và chỉ tính weighted F1. Code đã được sửa, số liệu cần lấy từ lần chạy mới.
 
-| Chỉ số đánh giá | Giá trị thực nghiệm | Tiêu chuẩn đề cương | Đánh giá |
-| :--- | :---: | :---: | :---: |
-| **Độ chính xác (Accuracy)** | **88.67%** | $\ge 75.0\%$ | Đạt vượt mức |
-| **F1-Score (Macro-Weighted)** | **0.8854** | $\ge 0.75$ | Rất tốt |
-| **Precision (Weighted)** | **0.8872** | $\ge 0.75$ | Rất tốt |
-| **Recall (Weighted)** | **0.8867** | $\ge 0.75$ | Rất tốt |
+Cách đánh giá hiện tại (`src/models/train_sentiment_mllib.py`):
 
-### Ma trận nhầm lẫn (Confusion Matrix) trên tập Test:
+- Dữ liệu: ưu tiên tập nhãn thật `hdfs:///lakehouse/bd05_tin_tuc/labels/sentiment_train.csv` (cột `text,label`),
+  nếu chưa có thì dùng 45 câu mẫu trong code (tập test chỉ khoảng 9–11 câu, số liệu chỉ để minh họa).
+- Khử trùng lặp văn bản **trước** khi chia, chia phân tầng theo nhãn 80/20 (`sampleBy`, `seed=42`),
+  tập test không chứa câu nào của tập train.
+- Chỉ số: Accuracy, Precision/Recall/F1 từng lớp, **Macro-F1** (trung bình không trọng số 3 lớp) và Weighted-F1,
+  kèm ma trận nhầm lẫn.
+- Kết quả được ghi vào `hdfs:///lakehouse/bd05_tin_tuc/gold/sentiment_model_metrics.parquet`
+  (API `/api/overview` trả về) và file `reports/mllib_metrics_latest.md` sau mỗi lần chạy.
 
-| Nhãn thực tế \ Nhãn dự đoán | 0 (Tiêu cực) | 1 (Trung tính) | 2 (Tích cực) | Tổng |
-| :--- | :---: | :---: | :---: | :---: |
-| **0 (Tiêu cực)** | **402** | 38 | 15 | 455 |
-| **1 (Trung tính)** | 31 | **395** | 22 | 448 |
-| **2 (Tích cực)** | 18 | 29 | **400** | 447 |
+| Chỉ số đánh giá | Giá trị thực nghiệm | Tiêu chuẩn đề cương |
+| :--- | :---: | :---: |
+| **Accuracy** | *(điền từ `reports/mllib_metrics_latest.md`)* | $\ge 75.0\%$ |
+| **Macro-F1** | *(điền sau khi chạy)* | $\ge 0.75$ |
+| **Macro-Precision** | *(điền sau khi chạy)* | |
+| **Macro-Recall** | *(điền sau khi chạy)* | |
 
 ---
 
@@ -82,9 +86,10 @@ Dữ liệu được chia theo tỷ lệ **80% Huấn luyện (Train)** và **20
 1. **Dữ liệu huấn luyện gốc:** Thường là các tập dữ liệu bình luận ngắn, câu phản hồi mạng xã hội (Social reviews như UIT-VSFC) có cấu trúc ngữ pháp ngắn gọn, tính biểu cảm trực tiếp (ví dụ: *"giảng viên nhiệt tình"*, *"chất lượng quá tệ"*).
 2. **Dữ liệu thực tế tầng Silver:** Là các bài báo điện tử chính thống của *VnExpress, Dân Trí, Tuổi Trẻ...* mang văn phong báo chí khách quan, dùng từ ngữ trang trọng và độ dài trung bình từ 400 - 600 từ.
 3. **Thực nghiệm kiểm chứng 200 bài báo ngẫu nhiên (Human Evaluation):**
-   - SV2 và SV3 đã gán nhãn độc lập trên mẫu 200 bài báo tầng Silver để làm ground-truth đối chiếu.
-   - Kết quả: Macro-F1 trên tập báo chí thực tế đạt **0.7820** (giảm ~10.3% so với tập test gốc).
-   - **Nguyên nhân chính:** Các bài viết phân tích kinh tế mang tính đa chiều: phần đầu nói về khó khăn thách thức (tiêu cực), nhưng phần kết lại khẳng định triển vọng phục hồi (tích cực).
+   - Xuất mẫu 200 bài tầng Silver bằng `src/jobs/export_manual_label_sample.py`, nhóm gán nhãn tay cột `label`,
+     lưu thành `hdfs:///lakehouse/bd05_tin_tuc/labels/manual_200.csv` (cột `id,label`).
+   - Khi có file này, `train_sentiment_mllib.py` tự đánh giá thêm trên tập `manual_200` và ghi Macro-F1 vào báo cáo.
+   - Kết quả: *(điền Macro-F1 trên `manual_200` từ `reports/mllib_metrics_latest.md`; số 0,7820 trước đây không có file nhãn đi kèm)*.
    - **Giải pháp xử lý:** Nhóm chọn giải pháp ghép `title` và 250 ký tự đầu (`sapo`/đoạn mở đầu), tận dụng triệt để nguyên lý "Kim tự tháp ngược" trong báo chí để nắm bắt sắc thái cảm xúc chủ đạo của bài viết.
 
 ---

@@ -1,7 +1,11 @@
-import sys
 import os
+import sys
 import time
+from datetime import datetime
+
 from pyspark.sql import SparkSession
+from pyspark.sql import functions as F
+from pyspark.sql.window import Window
 from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 from pyspark.ml import Pipeline
 from pyspark.ml.feature import RegexTokenizer, StopWordsRemover, HashingTF, IDF
@@ -11,26 +15,25 @@ from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 # Đảm bảo import được các module trong src/
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from src.nlp.stopwords import VIETNAMESE_STOPWORDS
+from src.models.sentiment_features import LABEL_NAMES, build_article_text, prepare_text
+from src.utils import lakehouse_paths as P
+from src.utils.spark_helper import path_exists
+
+REPORTS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../reports"))
 
 
 def create_spark_session():
     """
     Tạo SparkSession tối ưu cho huấn luyện MLlib.
     """
-    return SparkSession.builder \
-        .appName("Train_Spark_MLlib_Sentiment") \
-        .config("spark.sql.parquet.compression.codec", "snappy") \
-        .config("spark.sql.adaptive.enabled", "true") \
-        .getOrCreate()
+    return SparkSession.builder         .appName("Train_Spark_MLlib_Sentiment")         .config("spark.sql.parquet.compression.codec", "snappy")         .config("spark.sql.adaptive.enabled", "true")         .getOrCreate()
 
 
-def get_training_dataset(spark):
+def get_seed_dataset(spark):
     """
-    Tạo tập dữ liệu huấn luyện phân tích cảm xúc tiếng Việt 3 lớp:
-      - 0: Tiêu cực (Negative)
-      - 1: Trung tính (Neutral)
-      - 2: Tích cực (Positive)
-    Mẫu câu chuẩn bối cảnh kinh tế - xã hội - đời sống Việt Nam 2021-2022.
+    Bộ câu mẫu tự soạn 3 lớp (0: Tiêu cực, 1: Trung tính, 2: Tích cực), chỉ dùng khi chưa có
+    tập nhãn thật trên HDFS. Không nhân bản dữ liệu: mỗi câu xuất hiện đúng 1 lần, nên chỉ số
+    đo được trên tập test là trung thực (nhưng tập test rất nhỏ).
     """
     sample_corpus = [
         # --- 0: Tiêu cực (Negative) ---
@@ -85,24 +88,77 @@ def get_training_dataset(spark):
         ("Chỉ số niềm tin kinh doanh tăng vọt báo hiệu làn sóng đầu tư mạnh mẽ", 2)
     ]
 
-    # Nhân bản để tập huấn luyện đạt kích thước phân tán (~6.750 bản ghi)
-    expanded_data = sample_corpus * 150
-
     schema = StructType([
         StructField("text", StringType(), False),
         StructField("label", IntegerType(), False)
     ])
+    return spark.createDataFrame(sample_corpus, schema=schema)
 
-    return spark.createDataFrame(expanded_data, schema=schema)
+
+def load_feedback_labels(spark):
+    """
+    Nhãn do người dùng sửa trên Dashboard (write-back, labels/feedback.csv: id,label,...)
+    ghép với tiêu đề + sapo bài báo ở Silver -> thêm vào tập huấn luyện (dữ liệu đúng miền báo chí).
+    """
+    if not path_exists(spark, P.LABELS_FEEDBACK) or not path_exists(spark, P.SILVER_CLEAN):
+        return None
+    fb = spark.read.option("header", True).csv(P.LABELS_FEEDBACK)         .select(F.col("id").cast("long").alias("id"), F.col("label").cast("int").alias("label"), "updated_at")         .filter(F.col("label").isin(0, 1, 2))
+    fb = fb.withColumn("_rn", F.row_number().over(Window.partitionBy("id").orderBy(F.desc("updated_at"))))         .filter("_rn = 1").select("id", "label")
+    silver = spark.read.parquet(P.SILVER_CLEAN).select(F.col("id").cast("long").alias("id"), "title", "content")
+    return build_article_text(fb.join(silver, "id")).select("text", "label")
+
+
+def load_training_dataset(spark):
+    """
+    Ưu tiên tập nhãn thật trên HDFS (CSV có header: text,label), ví dụ UIT-VSFC
+    (scripts/prepare_sentiment_labels.py). Nếu chưa có thì dùng bộ câu mẫu.
+    Nhãn sửa tay từ Dashboard (write-back) luôn được cộng thêm nếu có.
+    """
+    labels_path = os.environ.get("LABELS_TRAIN_PATH", P.LABELS_TRAIN)
+    if path_exists(spark, labels_path):
+        df = spark.read.option("header", True).option("multiLine", True).option("escape", '"').csv(labels_path)
+        df = df.select(F.col("text").cast("string"), F.col("label").cast("int"))             .filter(F.col("text").isNotNull() & F.col("label").isin(0, 1, 2))
+        source = labels_path
+    else:
+        df, source = get_seed_dataset(spark), "seed_corpus (45 câu mẫu trong code)"
+
+    feedback = load_feedback_labels(spark)
+    if feedback is not None:
+        n_fb = feedback.count()
+        if n_fb:
+            df = df.unionByName(feedback)
+            source += f" + {n_fb} nhãn sửa tay từ Dashboard"
+    return df, source
+
+
+def add_class_weights(train_df):
+    """Trọng số nghịch tần suất lớp để lớp hiếm (Trung tính) không bị lấn át -> cải thiện Macro-F1."""
+    counts = {r["label"]: r["count"] for r in train_df.groupBy("label").count().collect()}
+    total, k = sum(counts.values()), len(counts)
+    weight = F.create_map(*[x for l, c in counts.items() for x in (F.lit(l), F.lit(total / (k * c)))])
+    return train_df.withColumn("weight", weight[F.col("label")])
+
+
+def stratified_split(df, train_ratio=0.8, seed=42):
+    """
+    Khử trùng lặp văn bản TRƯỚC khi chia, rồi chia phân tầng theo nhãn.
+    Tập test không chứa câu nào đã có trong tập train (tránh rò rỉ dữ liệu).
+    """
+    df = df.dropDuplicates(["text"]).cache()
+    labels = [r["label"] for r in df.select("label").distinct().collect()]
+    train_df = df.sampleBy("label", fractions={l: train_ratio for l in labels}, seed=seed).cache()
+    test_df = df.join(train_df.select("text"), "text", "left_anti").cache()
+    return train_df, test_df
 
 
 def build_pipeline():
     """
     Xây dựng Pipeline Spark MLlib phân tán:
     Tokenizer -> StopWordsRemover -> HashingTF -> IDF -> LogisticRegression
+    Đầu vào là cột text_tok (đã tách từ bằng pyvi trong prepare_text).
     """
     tokenizer = RegexTokenizer(
-        inputCol="text",
+        inputCol="text_tok",
         outputCol="raw_words",
         pattern=r"\s+",
         toLowercase=True
@@ -133,10 +189,136 @@ def build_pipeline():
         family="multinomial",
         maxIter=50,
         regParam=0.01,
-        elasticNetParam=0.0
+        elasticNetParam=0.0,
+        weightCol="weight"
     )
 
     return Pipeline(stages=[tokenizer, stop_words_remover, hashing_tf, idf, lr])
+
+
+
+def evaluate(predictions, dataset_name):
+    """
+    Tính Accuracy, Precision/Recall/F1 từng lớp, Macro (trung bình không trọng số) và Weighted.
+    """
+    predictions = predictions.cache()
+
+    def ev(metric, label=None):
+        e = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction", metricName=metric)
+        if label is not None:
+            e = e.setMetricLabel(float(label))
+        return e.evaluate(predictions)
+
+    present = sorted(r["label"] for r in predictions.select("label").distinct().collect())
+    per_class = {}
+    for l in present:
+        per_class[l] = {
+            "precision": ev("precisionByLabel", l),
+            "recall": ev("recallByLabel", l),
+            "f1": ev("fMeasureByLabel", l),
+        }
+
+    n = len(per_class) or 1
+    metrics = {
+        "dataset": dataset_name,
+        "n_samples": predictions.count(),
+        "accuracy": ev("accuracy"),
+        "macro_precision": sum(c["precision"] for c in per_class.values()) / n,
+        "macro_recall": sum(c["recall"] for c in per_class.values()) / n,
+        "macro_f1": sum(c["f1"] for c in per_class.values()) / n,
+        "weighted_f1": ev("f1"),
+        "weighted_precision": ev("weightedPrecision"),
+        "weighted_recall": ev("weightedRecall"),
+    }
+
+    confusion = predictions.groupBy("label") \
+        .pivot("prediction", [0.0, 1.0, 2.0]).count() \
+        .na.fill(0).orderBy("label")
+    confusion_rows = confusion.collect()
+
+    print("-" * 60)
+    print(f" ĐÁNH GIÁ TRÊN: {dataset_name} ({metrics['n_samples']:,} mẫu)")
+    print(f" Accuracy          : {metrics['accuracy'] * 100:.2f}%")
+    print(f" Macro-Precision   : {metrics['macro_precision']:.4f}")
+    print(f" Macro-Recall      : {metrics['macro_recall']:.4f}")
+    print(f" Macro-F1          : {metrics['macro_f1']:.4f}")
+    print(f" Weighted-F1       : {metrics['weighted_f1']:.4f}")
+    for l, c in per_class.items():
+        print(f"   Lớp {l} ({LABEL_NAMES[l]}): P={c['precision']:.4f} R={c['recall']:.4f} F1={c['f1']:.4f}")
+    print(" Ma trận nhầm lẫn (hàng = nhãn thật, cột = dự đoán 0/1/2):")
+    confusion.show(truncate=False)
+    print("-" * 60)
+    return metrics, per_class, confusion_rows
+
+
+def evaluate_manual_labels(spark, model):
+    """
+    Đo domain shift: so mô hình với 200 bài báo Silver được nhóm gán nhãn tay
+    (CSV có header: id,label). Bỏ qua nếu chưa có file.
+    """
+    manual_path = os.environ.get("LABELS_MANUAL_PATH", P.LABELS_MANUAL)
+    silver_path = os.environ.get("SILVER_PATH", P.SILVER_CLEAN)
+    if not path_exists(spark, manual_path) or not path_exists(spark, silver_path):
+        print(f"-> Chưa có nhãn tay tại {manual_path}, bỏ qua đánh giá domain shift.")
+        print("   Tạo mẫu 200 bài để gán nhãn bằng: src/jobs/export_manual_label_sample.py")
+        return None
+
+    labels = spark.read.option("header", True).csv(manual_path) \
+        .select(F.col("id").cast("long").alias("id"), F.col("label").cast("int").alias("label")) \
+        .filter(F.col("label").isin(0, 1, 2))
+    silver = spark.read.parquet(silver_path).select(F.col("id").cast("long").alias("id"), "title", "content")
+    df = prepare_text(build_article_text(labels.join(silver, "id")))
+    return evaluate(model.transform(df), "manual_200")
+
+
+def save_metrics(spark, all_metrics, source_name, train_count, test_count):
+    rows = []
+    for metrics, per_class, _ in all_metrics:
+        for k, v in metrics.items():
+            if k != "dataset":
+                rows.append((metrics["dataset"], k, float(v)))
+        for l, c in per_class.items():
+            for k, v in c.items():
+                rows.append((metrics["dataset"], f"{k}_class_{l}", float(v)))
+
+    # Tạo DataFrame bằng literal (không cần Python worker)
+    metrics_path = os.environ.get("MODEL_METRICS_PATH", P.GOLD_MODEL_METRICS)
+    lit_rows = [
+        F.struct(F.lit(d).alias("dataset"), F.lit(m).alias("metric"), F.lit(v).alias("value"))
+        for d, m, v in rows
+    ]
+    metrics_df = spark.range(1).select(F.explode(F.array(*lit_rows)).alias("r")).select("r.*")
+    metrics_df.coalesce(1).write.mode("overwrite").parquet(metrics_path)
+    print(f"-> Đã lưu chỉ số đánh giá vào: {metrics_path}")
+
+    # Ghi thêm bản Markdown vào reports/ (khi chạy trong container có mount thư mục dự án)
+    if not os.path.isdir(REPORTS_DIR):
+        return
+    out = os.path.join(REPORTS_DIR, "mllib_metrics_latest.md")
+    lines = [
+        "# Kết quả đánh giá mô hình cảm xúc (sinh tự động bởi train_sentiment_mllib.py)",
+        "",
+        f"- Thời điểm chạy: {datetime.now():%Y-%m-%d %H:%M:%S}",
+        f"- Dữ liệu huấn luyện: {source_name}",
+        f"- Train: {train_count:,} mẫu, Test: {test_count:,} mẫu (khử trùng trước khi chia, không có câu nào nằm ở cả hai tập)",
+        "",
+    ]
+    for metrics, per_class, confusion in all_metrics:
+        lines += [f"## {metrics['dataset']}", "", "| Chỉ số | Giá trị |", "|---|---|"]
+        lines.append(f"| n_samples | {metrics['n_samples']:,} |")
+        for k in ["accuracy", "macro_precision", "macro_recall", "macro_f1", "weighted_f1"]:
+            lines.append(f"| {k} | {metrics[k]:.4f} |")
+        lines += ["", "| Lớp | Precision | Recall | F1 |", "|---|---|---|---|"]
+        for l, c in per_class.items():
+            lines.append(f"| {l} {LABEL_NAMES[l]} | {c['precision']:.4f} | {c['recall']:.4f} | {c['f1']:.4f} |")
+        lines += ["", "Ma trận nhầm lẫn (hàng = nhãn thật, cột = dự đoán):", "",
+                  "| Nhãn | 0 | 1 | 2 |", "|---|---|---|---|"]
+        for r in confusion:
+            lines.append(f"| {r['label']} | {r['0.0']} | {r['1.0']} | {r['2.0']} |")
+        lines.append("")
+    with open(out, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    print(f"-> Đã ghi báo cáo: {out}")
 
 
 def main():
@@ -144,46 +326,37 @@ def main():
     spark = create_spark_session()
     spark.sparkContext.setLogLevel("WARN")
 
-    model_hdfs_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/models/sentiment_model"
+    model_hdfs_path = os.environ.get("MODEL_PATH", P.MODEL_SENTIMENT)
 
     print("=" * 65)
     print(" BẮT ĐẦU HUẤN LUYỆN SPARK MLLIB: SENTIMENT ANALYSIS (VIETNAMESE)")
     print(f" Đích lưu trữ Model HDFS: {model_hdfs_path}")
     print("=" * 65)
 
-    print("\n[Bước 1/5] Khởi tạo dữ liệu huấn luyện và phân chia Train/Test (80/20)...")
-    df = get_training_dataset(spark)
-    train_df, test_df = df.randomSplit([0.8, 0.2], seed=42)
-    print(f"-> Tập huấn luyện (Train): {train_df.count():,} bản ghi")
-    print(f"-> Tập kiểm thử (Test)  : {test_df.count():,} bản ghi")
+    print("\n[Bước 1/5] Nạp dữ liệu có nhãn và chia Train/Test phân tầng (80/20)...")
+    df, source_name = load_training_dataset(spark)
+    print(f"-> Nguồn dữ liệu: {source_name}")
+    df = prepare_text(df)
+    train_df, test_df = stratified_split(df)
+    train_count, test_count = train_df.count(), test_df.count()
+    print(f"-> Tập huấn luyện (Train): {train_count:,} bản ghi")
+    print(f"-> Tập kiểm thử (Test)  : {test_count:,} bản ghi")
+    if source_name.startswith("seed_corpus"):
+        print("   CẢNH BÁO: đang dùng 45 câu mẫu, tập test rất nhỏ nên chỉ số chỉ mang tính minh họa.")
+        print(f"   Đặt tập nhãn thật (CSV text,label) tại {P.LABELS_TRAIN} để có F1 đáng tin cậy.")
 
     print("\n[Bước 2/5] Đang khớp (fit) Spark MLlib Pipeline...")
-    pipeline = build_pipeline()
-    pipeline_model = pipeline.fit(train_df)
+    pipeline_model = build_pipeline().fit(add_class_weights(train_df))
     print("-> Huấn luyện mô hình LogisticRegression hoàn tất!")
 
-    print("\n[Bước 3/5] Đang dự đoán và đánh giá chất lượng mô hình trên Test...")
-    predictions = pipeline_model.transform(test_df)
+    print("\n[Bước 3/5] Đánh giá trên tập Test...")
+    all_metrics = [evaluate(pipeline_model.transform(test_df), "test_split")]
 
-    evaluator_acc = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction", metricName="accuracy")
-    evaluator_f1 = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction", metricName="f1")
-    evaluator_prec = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction", metricName="weightedPrecision")
-    evaluator_rec = MulticlassClassificationEvaluator(labelCol="label", predictionCol="prediction", metricName="weightedRecall")
-
-    acc = evaluator_acc.evaluate(predictions)
-    f1 = evaluator_f1.evaluate(predictions)
-    prec = evaluator_prec.evaluate(predictions)
-    rec = evaluator_rec.evaluate(predictions)
-
-    print("-" * 50)
-    print(f" ĐỘ CHÍNH XÁC (Accuracy)  : {acc * 100:.2f}%")
-    print(f" F1-SCORE (Macro-Weighted) : {f1:.4f}")
-    print(f" PRECISION                 : {prec:.4f}")
-    print(f" RECALL                    : {rec:.4f}")
-    print("-" * 50)
-
-    print("\n[Bước 4/5] Kết quả dự đoán mẫu trên tập kiểm thử:")
-    predictions.select("text", "label", "prediction").show(6, truncate=60)
+    print("\n[Bước 4/5] Đánh giá domain shift trên nhãn tay (nếu có)...")
+    manual = evaluate_manual_labels(spark, pipeline_model)
+    if manual:
+        all_metrics.append(manual)
+    save_metrics(spark, all_metrics, source_name, train_count, test_count)
 
     print(f"\n[Bước 5/5] Đang lưu trữ PipelineModel lên HDFS: {model_hdfs_path}...")
     pipeline_model.write().overwrite().save(model_hdfs_path)

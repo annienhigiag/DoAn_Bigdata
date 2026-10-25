@@ -1,0 +1,11 @@
+# Thư viện chạy trên máy host (API, Dashboard, script hỗ trợ).
+# Spark job chạy trong container (docker/spark/Dockerfile).
+pandas>=2.0
+pyarrow>=14.0
+fastapi>=0.110
+uvicorn[standard]>=0.29
+streamlit>=1.50
+plotly>=5.20
+kafka-python>=2.0.2
+pyvi==0.1.1
+orjson>=3.9

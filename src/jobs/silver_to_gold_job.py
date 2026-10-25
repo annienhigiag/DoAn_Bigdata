@@ -5,6 +5,9 @@ from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+from src.utils import lakehouse_paths as P
+
 
 def create_spark_session():
     """
@@ -23,9 +26,9 @@ def main():
     spark = create_spark_session()
     spark.sparkContext.setLogLevel("WARN")
 
-    silver_sentiment_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/news_sentiment.parquet"
-    gold_trend_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/xu_huong_ngay.parquet"
-    gold_anomaly_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/canh_bao_dot_bien.parquet"
+    silver_sentiment_path = os.environ.get("SILVER_SENTIMENT_PATH", P.SILVER_SENTIMENT)
+    gold_trend_path = os.environ.get("GOLD_TREND_PATH", P.GOLD_TREND)
+    gold_anomaly_path = os.environ.get("GOLD_ALERT_PATH", P.GOLD_ALERT)
 
     print("=" * 75)
     print(" BẮT ĐẦU PIPELINE TỔNG HỢP TẦNG GOLD & PHÁT HIỆN ĐỘT BIẾN Z-SCORE")
@@ -128,6 +131,17 @@ def main():
         .partitionBy("crawled_date") \
         .parquet(gold_anomaly_path)
     print("-> Ghi Bảng 2 thành công!")
+
+    # Bảng 3: bài viết tiêu biểu cho Dashboard (xem chi tiết đột biến, sửa nhãn write-back).
+    # Gồm các bài thuộc (ngày, chủ đề) đang cảnh báo + mẫu ngẫu nhiên, tối đa 5.000 bài.
+    hot = anomaly_df.filter(F.col("muc_do_canh_bao") != "Bình thường").select("crawled_date", "topic")
+    article_cols = ["id", "url", "source", "topic", "title", F.substring("content", 1, 300).alias("sapo"),
+                    "sentiment_class", "sentiment_label", "sentiment_score", "crawled_date"]
+    in_alert = silver_df.join(F.broadcast(hot), ["crawled_date", "topic"]).select(*article_cols)         .withColumn("thuoc_canh_bao", F.lit(True))
+    sample = silver_df.sample(fraction=0.05, seed=2022).select(*article_cols).withColumn("thuoc_canh_bao", F.lit(False))
+    articles = in_alert.unionByName(sample).dropDuplicates(["id"]).orderBy(F.rand(7)).limit(5000)
+    articles.coalesce(1).write.mode("overwrite").parquet(P.GOLD_ARTICLES)
+    print(f"-> Ghi bảng bài viết tiêu biểu: {P.GOLD_ARTICLES}")
 
     # 5. HIỂN THỊ KẾT QUẢ MẪU ĐỘT BIẾN TRUYỀN THÔNG
     print("\n--- TOP CÁC SỰ KIỆN ĐỘT BIẾN / KHỦNG HOẢNG TRUYỀN THÔNG (Z-SCORE >= 1.5) ---")

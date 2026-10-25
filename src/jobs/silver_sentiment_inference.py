@@ -3,8 +3,12 @@ import os
 import time
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
-from pyspark.sql.types import DoubleType
 from pyspark.ml import PipelineModel
+from pyspark.ml.functions import vector_to_array
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+from src.models.sentiment_features import build_article_text, prepare_text
+from src.utils import lakehouse_paths as P
 
 
 def create_spark_session():
@@ -19,29 +23,17 @@ def create_spark_session():
         .getOrCreate()
 
 
-def extract_max_prob(prob_vector):
-    """
-    UDF Python trích xuất xác suất tin cậy lớn nhất từ vector xác suất của Spark MLlib.
-    """
-    if prob_vector is not None:
-        try:
-            return float(max(prob_vector.values))
-        except Exception:
-            return 0.0
-    return 0.0
-
-
 def main():
     start_time = time.time()
     spark = create_spark_session()
     spark.sparkContext.setLogLevel("WARN")
 
-    silver_input_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/news_clean.parquet"
-    model_hdfs_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/models/sentiment_model"
-    silver_output_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/news_sentiment.parquet"
+    silver_input_path = os.environ.get("SILVER_PATH", P.SILVER_CLEAN)
+    model_hdfs_path = os.environ.get("MODEL_PATH", P.MODEL_SENTIMENT)
+    silver_output_path = os.environ.get("SILVER_SENTIMENT_PATH", P.SILVER_SENTIMENT)
 
     print("=" * 70)
-    print(" BẮT ĐẦU BATCH INFERENCE CẢM XÚC: 51.621 BÀI BÁO TẦNG SILVER")
+    print(" BẮT ĐẦU BATCH INFERENCE CẢM XÚC TẦNG SILVER")
     print(f" Nguồn vào   : {silver_input_path}")
     print(f" Mô hình HDFS: {model_hdfs_path}")
     print(f" Đích ghi    : {silver_output_path}")
@@ -60,16 +52,12 @@ def main():
 
     # 3. CHUẨN BỊ TRƯỜNG VĂN BẢN ĐẠI DIỆN
     print("\n[Bước 3/5] Chuẩn bị trường văn bản ('text') từ tiêu đề và đoạn đầu nội dung...")
-    infer_prep_df = silver_df.withColumn(
-        "text",
-        F.concat_ws(" . ", F.col("title"), F.substring(F.col("content"), 1, 250))
-    )
+    # Dùng chung hàm với bước huấn luyện để văn bản được biến đổi giống hệt nhau
+    infer_prep_df = prepare_text(build_article_text(silver_df))
 
     # 4. THỰC THI TRANSFORM PHÂN TÁN
     print("\n[Bước 4/5] Đang thực thi phân tán dự đoán cảm xúc (PipelineModel.transform)...")
     pred_df = model.transform(infer_prep_df)
-
-    max_prob_udf = F.udf(extract_max_prob, DoubleType())
 
     labeled_df = pred_df \
         .withColumn(
@@ -79,7 +67,7 @@ def main():
              .when(F.col("prediction") == 2, "Tích cực")
              .otherwise("Không xác định")
         ) \
-        .withColumn("sentiment_score", F.round(max_prob_udf(F.col("probability")), 4)) \
+        .withColumn("sentiment_score", F.round(F.array_max(vector_to_array(F.col("probability"))), 4)) \
         .withColumn("sentiment_class", F.col("prediction").cast("int"))
 
     final_sentiment_df = labeled_df.select(

@@ -3,6 +3,9 @@ import os
 import time
 from pyspark.sql import SparkSession
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+from src.utils import lakehouse_paths as P
+
 
 def create_spark_session():
     """
@@ -20,8 +23,8 @@ def main():
     spark = create_spark_session()
     spark.sparkContext.setLogLevel("WARN")
 
-    silver_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/news_sentiment.parquet"
-    output_path = "hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/spark_sql_summary.parquet"
+    silver_path = P.SILVER_SENTIMENT
+    output_path = f"{P.LAKEHOUSE_ROOT}/gold/spark_sql_summary.parquet"
 
     print(" TRUY VẤN VÀ PHÂN TÍCH DỮ LIỆU BẰNG SPARK SQL")
     print(f" Nguồn dữ liệu (Silver Table): {silver_path}")
