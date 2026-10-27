@@ -15,7 +15,7 @@ st.set_page_config(
     page_title="Lakehouse Media Trend & Sentiment Dashboard",
     page_icon="📊",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="collapsed"
 )
 T.register_plotly_template()
 T.inject_css()
@@ -331,25 +331,33 @@ def build_views(start_d, end_d, selected_source, selected_topic):
 df_trend, df_alert = load_gold_data()
 
 if df_trend is not None and df_alert is not None:
-    # --- SIDEBAR: BỘ LỌC TƯƠNG TÁC ---
-    st.sidebar.markdown('<div class="bd-side-title">📰 BD05 News Lakehouse</div>'
-                        '<div class="bd-side-sub">Theo dõi xu hướng & cảm xúc tin tức tiếng Việt</div>',
-                        unsafe_allow_html=True)
-    st.sidebar.markdown("**🔍 Bộ lọc dữ liệu**")
+    # --- THANH ĐIỀU HƯỚNG + TIÊU ĐỀ TRANG ---
+    T.navbar([("Tổng quan", "#"), ("Airflow", "http://localhost:8085"), ("HDFS", "http://localhost:9870"),
+              ("Spark", "http://localhost:8080"), ("API", "http://localhost:8000/docs")])
 
+    etl_info = load_table("etl_quality_stats.parquet")
+    updated = str(etl_info.iloc[0]["run_at"])[:16] if etl_info is not None and len(etl_info) else "chưa có"
+    T.page_header(
+        "Trang chủ › <b>Bảng điều khiển</b>",
+        "Theo dõi Xu hướng & Cảm xúc Tin tức Tiếng Việt",
+        "59.168 bài báo tháng 06/2022 • Lakehouse trên HDFS, xử lý bằng Spark, cập nhật qua Airflow",
+        updated,
+    )
+
+    # --- THANH BỘ LỌC ---
     min_date = df_trend["crawled_date"].min().date()
     max_date = df_trend["crawled_date"].max().date()
-
-    date_range = st.sidebar.date_input(
-        "Khoảng thời gian khảo sát:",
-        value=(min_date, max_date),
-        min_value=min_date,
-        max_value=max_date
-    )
     all_sources = ["Tất cả"] + sorted(list(df_trend["source"].unique()))
-    selected_source = st.sidebar.selectbox("Nguồn báo chí:", all_sources)
     all_topics = ["Tất cả"] + sorted(list(df_trend["topic"].unique()))
-    selected_topic = st.sidebar.selectbox("Chuyên mục / Chủ đề:", all_topics)
+
+    f1, f2, f3 = st.columns([2, 1.3, 1.3])
+    with f1:
+        date_range = st.date_input("📅 Khoảng thời gian", value=(min_date, max_date),
+                                   min_value=min_date, max_value=max_date, format="DD/MM/YYYY")
+    with f2:
+        selected_source = st.selectbox("📰 Nguồn báo", all_sources)
+    with f3:
+        selected_topic = st.selectbox("🗂️ Chuyên mục", all_topics)
 
     # Toàn bộ số liệu và biểu đồ được tính trong build_views() có @st.cache_data theo bộ lọc,
     # nên tải lại trang / đổi tab không phải dựng lại biểu đồ.
@@ -359,27 +367,6 @@ if df_trend is not None and df_alert is not None:
         start_d, end_d = min_date, max_date
 
     v = build_views(start_d, end_d, selected_source, selected_topic)
-
-    etl_side = load_table("etl_quality_stats.parquet")
-    side_info = ""
-    if etl_side is not None and len(etl_side):
-        e = etl_side.iloc[0]
-        side_info = (f"<b>Dữ liệu</b><br>Bronze: {T.num(e['bronze_records'])} bài<br>Silver: {T.num(e['silver_records'])} bài<br>"
-                     f"Cập nhật ETL: {str(e['run_at'])[:16]}")
-    st.sidebar.markdown(f'<div class="bd-side-box">{side_info}<br><br><b>Hệ thống</b><br>'
-                        'HDFS 3 DataNodes • Spark 3.5<br>Delta Lake • Kafka • Airflow</div>', unsafe_allow_html=True)
-
-    # --- TIÊU ĐỀ CHÍNH ---
-    filter_desc = f"{start_d:%d/%m} – {end_d:%d/%m/%Y}"
-    if selected_source != "Tất cả":
-        filter_desc += f" • nguồn {selected_source}"
-    if selected_topic != "Tất cả":
-        filter_desc += f" • chuyên mục {selected_topic}"
-    T.hero(
-        "Theo dõi Xu hướng & Cảm xúc Tin tức Tiếng Việt",
-        f"Big Data Lakehouse trên HDFS • Đang xem: {filter_desc}",
-        ["HDFS 3 DataNodes", "Spark 3.5 MLlib", "Delta Lake", "Kafka Streaming", "Airflow", "FastAPI"],
-    )
 
     # --- HÀNG KPI ---
     k = v["kpi"]
@@ -433,7 +420,7 @@ if df_trend is not None and df_alert is not None:
             after_exact = valid - int(etl["exact_url_duplicates"]) - int(etl["exact_content_duplicates"])
             values = [int(etl["bronze_records"]), valid, after_exact, int(etl["silver_records"])]
             fig_funnel = go.Figure(go.Funnel(
-                y=stages, x=values, textinfo="value+percent initial",
+                y=stages, x=values, texttemplate="%{value:,} bài<br>%{percentInitial:.0%}",
                 marker=dict(color=[T.MUTED, T.PRIMARY, "#0d9488", T.POSITIVE]),
                 connector=dict(line=dict(color=T.GRID, width=1))))
             fig_funnel.update_layout(height=300, title="Từ Bronze đến Silver", margin=dict(l=10, r=10, t=50, b=10))
@@ -577,3 +564,5 @@ if df_trend is not None and df_alert is not None:
 
     with tab6:
         render_pipeline_tab()
+
+    T.footer()

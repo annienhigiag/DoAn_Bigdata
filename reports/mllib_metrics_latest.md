@@ -1,6 +1,6 @@
 # Kết quả đánh giá mô hình cảm xúc (sinh tự động bởi train_sentiment_mllib.py)
 
-- Thời điểm chạy: 2026-10-25 11:10:51
+- Thời điểm chạy: 2026-10-27 16:48:08
 - Dữ liệu huấn luyện: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/labels/sentiment_train.csv + 2 nhãn sửa tay từ Dashboard
 - Train: 12,911 mẫu, Test: 3,265 mẫu (khử trùng trước khi chia, không có câu nào nằm ở cả hai tập)
 

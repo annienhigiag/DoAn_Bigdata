@@ -32,6 +32,7 @@ def register_plotly_template():
         font=dict(family="Inter, Segoe UI, sans-serif", size=13, color=INK),
         title=dict(font=dict(size=15, color=INK), x=0, xanchor="left", pad=dict(b=8)),
         colorway=CATEGORICAL,
+        separators=",.",  # kiểu Việt Nam: 47.976 và 0,835
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         margin=dict(l=10, r=10, t=50, b=10),
@@ -160,6 +161,63 @@ html, body, [class*="css"], .stMarkdown, .stText { font-family: 'Inter', 'Segoe 
 .bd-side-sub { font-size: .8rem; color: #94a3b8; margin-bottom: 14px; }
 .bd-side-box { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
   border-radius: 12px; padding: 12px 14px; font-size: .82rem; color: #cbd5e1; margin-top: 18px; line-height: 1.6; }
+
+/* ===== Bố cục kiểu website: ẩn khung Streamlit, thanh điều hướng, footer ===== */
+header[data-testid="stHeader"], [data-testid="stToolbar"], [data-testid="stDecoration"],
+[data-testid="stStatusWidget"], [data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"],
+[data-testid="collapsedControl"], .stDeployButton { display: none !important; }
+.block-container { padding-top: 0 !important; max-width: 1360px; }
+.stApp { background: #f4f6fb; }
+
+.bd-nav { position: sticky; top: 0; z-index: 999; margin: 0 -1000px 0 -1000px; padding: 0 1000px;
+  background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #e6eaf2; }
+.bd-nav-inner { height: 64px; display: flex; align-items: center; gap: 28px; }
+.bd-logo { display: flex; align-items: center; gap: 10px; font-weight: 700; color: #0f172a; font-size: 1.05rem; white-space: nowrap; }
+.bd-logo .mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; color: #fff; font-size: .95rem;
+  background: linear-gradient(135deg, #1d4ed8, #0ea5e9); box-shadow: 0 6px 14px -6px rgba(37,99,235,.7); }
+.bd-logo small { display: block; font-weight: 500; color: #64748b; font-size: .72rem; margin-top: -2px; }
+.bd-nav-links { display: flex; gap: 22px; font-size: .9rem; font-weight: 500; }
+.bd-nav-links a { color: #475569; text-decoration: none; }
+.bd-nav-links a:hover { color: #2563eb; }
+.bd-nav-right { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.bd-live { display: flex; align-items: center; gap: 6px; font-size: .8rem; color: #15803d; background: #dcfce7;
+  border-radius: 99px; padding: 4px 10px; font-weight: 600; }
+.bd-live i { width: 7px; height: 7px; border-radius: 50%; background: #16a34a; box-shadow: 0 0 0 3px rgba(22,163,74,.25); }
+.bd-avatar { width: 34px; height: 34px; border-radius: 50%; background: #1e293b; color: #fff; display: grid; place-items: center;
+  font-size: .8rem; font-weight: 700; }
+
+.bd-page { padding: 26px 0 8px 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.bd-crumb { color: #94a3b8; font-size: .8rem; margin-bottom: 6px; }
+.bd-crumb b { color: #475569; font-weight: 600; }
+.bd-page h1 { font-size: 1.7rem; font-weight: 700; color: #0f172a; margin: 0; padding: 0; letter-spacing: -.02em; }
+.bd-page p { color: #64748b; margin: 4px 0 0 0; font-size: .92rem; }
+.bd-updated { color: #64748b; font-size: .8rem; text-align: right; white-space: nowrap; }
+.bd-updated b { color: #0f172a; }
+
+/* Thanh bộ lọc */
+.bd-filter-title { font-size: .78rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: .05em;
+  margin: 6px 0 -6px 2px; }
+div[data-testid="stHorizontalBlock"]:has(> div [data-testid="stDateInput"]) {
+  background: #fff; border: 1px solid #e6eaf2; border-radius: 16px; padding: 10px 16px 4px 16px; margin-bottom: 16px;
+  box-shadow: 0 8px 24px -20px rgba(15,23,42,.35); }
+
+/* Tabs thành menu điều hướng gạch chân */
+.stTabs [data-baseweb="tab-list"] { gap: 4px !important; background: transparent !important; padding: 0 !important;
+  border: none !important; border-bottom: 1px solid #e2e8f0 !important; border-radius: 0 !important; box-shadow: none !important; }
+.stTabs [data-baseweb="tab"] { background: transparent !important; border-radius: 0 !important; padding: 12px 14px !important;
+  color: #64748b !important; border-bottom: 2px solid transparent !important; }
+.stTabs [data-baseweb="tab"]:hover { color: #0f172a !important; background: transparent !important; }
+.stTabs [aria-selected="true"] { background: transparent !important; color: #2563eb !important; box-shadow: none !important;
+  border-bottom: 2px solid #2563eb !important; }
+.stTabs [aria-selected="true"] p { color: #2563eb !important; }
+
+/* Footer */
+.bd-footer { margin: 40px -1000px 0 -1000px; padding: 26px 1000px; background: #0f172a; color: #94a3b8; font-size: .82rem; }
+.bd-footer-inner { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.bd-footer b { color: #e2e8f0; display: block; margin-bottom: 6px; font-size: .88rem; }
+.bd-footer a { color: #94a3b8; text-decoration: none; display: block; line-height: 1.8; }
+.bd-footer a:hover { color: #fff; }
+.bd-footer .copy { border-top: 1px solid #1e293b; margin-top: 18px; padding-top: 14px; }
 </style>
 """
 
@@ -268,3 +326,41 @@ def section(title, note=None):
     st.markdown(f'<div class="bd-section">{html.escape(title)}</div>', unsafe_allow_html=True)
     if note:
         st.markdown(f'<div class="bd-note">{html.escape(note)}</div>', unsafe_allow_html=True)
+
+
+def navbar(links, user="BD05"):
+    items = "".join(f'<a href="{href}" target="_blank">{html.escape(name)}</a>' for name, href in links)
+    st.markdown(
+        '<div class="bd-nav"><div class="bd-nav-inner">'
+        '<div class="bd-logo"><div class="mark">BD</div><div>News Lakehouse<small>Xu hướng & cảm xúc tin tức</small></div></div>'
+        f'<div class="bd-nav-links">{items}</div>'
+        '<div class="bd-nav-right"><span class="bd-live"><i></i>Hệ thống hoạt động</span>'
+        f'<div class="bd-avatar">{html.escape(user)}</div></div></div></div>',
+        unsafe_allow_html=True,
+    )
+
+
+def page_header(crumb, title, subtitle, updated):
+    st.markdown(
+        f'<div class="bd-page"><div><div class="bd-crumb">{crumb}</div><h1>{html.escape(title)}</h1>'
+        f'<p>{html.escape(subtitle)}</p></div>'
+        f'<div class="bd-updated">Cập nhật dữ liệu<br><b>{html.escape(updated)}</b></div></div>',
+        unsafe_allow_html=True,
+    )
+
+
+def footer():
+    st.markdown(
+        '<div class="bd-footer"><div class="bd-footer-inner">'
+        '<div><b>BD05 News Lakehouse</b>Hệ thống theo dõi xu hướng và cảm xúc tin tức tiếng Việt<br>'
+        'Đồ án môn Dữ liệu lớn (Big Data) • Nhóm 4 thành viên</div>'
+        '<div><b>Hệ thống</b><a href="http://localhost:8085" target="_blank">Airflow</a>'
+        '<a href="http://localhost:9870" target="_blank">HDFS NameNode</a>'
+        '<a href="http://localhost:8080" target="_blank">Spark Master</a></div>'
+        '<div><b>Dữ liệu & API</b><a href="http://localhost:8000/docs" target="_blank">FastAPI (Swagger)</a>'
+        '<a href="https://www.kaggle.com/datasets/haitranquangofficial/vietnamese-online-news-dataset" target="_blank">Vietnamese Online News Dataset</a>'
+        '<a href="https://huggingface.co/datasets/uitnlp/vietnamese_students_feedback" target="_blank">UIT-VSFC</a></div>'
+        '<div><b>Công nghệ</b>HDFS • Spark 3.5 • Delta Lake<br>Kafka • Airflow • FastAPI • Streamlit</div>'
+        '</div><div class="copy">© 2026 BD05 • Dữ liệu tin tức 06/2022 từ 26 nguồn báo điện tử</div></div>',
+        unsafe_allow_html=True,
+    )
