@@ -1,0 +1,14 @@
+{
+  "tong_so_bai": 300,
+  "so_batch": 1,
+  "data": [
+    {
+      "batch_id": 0,
+      "processed_at": "2026-10-27 17:58:48.557236",
+      "so_bai": 300,
+      "tich_cuc": 56,
+      "trung_tinh": 13,
+      "tieu_cuc": 231
+    }
+  ]
+}

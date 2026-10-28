@@ -1,0 +1,113 @@
+[2026-10-28T05:43:59.356+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-28T05:43:59.395+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bd05_2_etl_clean.bronze_to_silver manual__2026-10-28T05:43:53.832981+00:00 [queued]>
+[2026-10-28T05:43:59.409+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bd05_2_etl_clean.bronze_to_silver manual__2026-10-28T05:43:53.832981+00:00 [queued]>
+[2026-10-28T05:43:59.410+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-28T05:43:59.446+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): bronze_to_silver> on 2026-10-28 05:43:53.832981+00:00
+[2026-10-28T05:43:59.460+0000] {standard_task_runner.py:63} INFO - Started process 163 to run task
+[2026-10-28T05:43:59.464+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'bd05_2_etl_clean', 'bronze_to_silver', 'manual__2026-10-28T05:43:53.832981+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/bd05_2_etl_clean.py', '--cfg-path', '/tmp/tmpdvvjbcdz']
+[2026-10-28T05:43:59.467+0000] {standard_task_runner.py:91} INFO - Job 59: Subtask bronze_to_silver
+[2026-10-28T05:43:59.531+0000] {task_command.py:426} INFO - Running <TaskInstance: bd05_2_etl_clean.bronze_to_silver manual__2026-10-28T05:43:53.832981+00:00 [running]> on host 7b867548fade
+[2026-10-28T05:43:59.652+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='bd05_2_etl_clean' AIRFLOW_CTX_TASK_ID='bronze_to_silver' AIRFLOW_CTX_EXECUTION_DATE='2026-10-28T05:43:53.832981+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-28T05:43:53.832981+00:00'
+[2026-10-28T05:43:59.655+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-28T05:44:00.054+0000] {logging_mixin.py:188} INFO - $ docker exec spark-master spark-submit --master spark://spark-master:7077 --conf spark.driver.extraJavaOptions=-Dfile.encoding=UTF-8 --conf spark.executorEnv.PYTHONPATH=/opt/spark-apps --conf spark.executorEnv.PYTHONIOENCODING=utf-8 --conf spark.cores.max=2 /opt/spark-apps/src/jobs/bronze_to_silver_job.py
+[2026-10-28T05:44:11.142+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SparkContext: Running Spark version 3.5.1
+[2026-10-28T05:44:11.147+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+[2026-10-28T05:44:11.148+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SparkContext: Java version 17.0.12
+[2026-10-28T05:44:11.200+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO ResourceUtils: ==============================================================
+[2026-10-28T05:44:11.202+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-10-28T05:44:11.203+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO ResourceUtils: ==============================================================
+[2026-10-28T05:44:11.205+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SparkContext: Submitted application: Lakehouse_ETL_Bronze_to_Silver
+[2026-10-28T05:44:11.245+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-10-28T05:44:11.262+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO ResourceProfile: Limiting resource is cpu
+[2026-10-28T05:44:11.266+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-10-28T05:44:11.443+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SecurityManager: Changing view acls to: spark
+[2026-10-28T05:44:11.445+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SecurityManager: Changing modify acls to: spark
+[2026-10-28T05:44:11.452+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SecurityManager: Changing view acls groups to:
+[2026-10-28T05:44:11.456+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SecurityManager: Changing modify acls groups to:
+[2026-10-28T05:44:11.460+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2026-10-28T05:44:11.670+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-10-28T05:44:12.643+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:12 INFO Utils: Successfully started service 'sparkDriver' on port 36581.
+[2026-10-28T05:44:12.775+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:12 INFO SparkEnv: Registering MapOutputTracker
+[2026-10-28T05:44:12.949+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:12 INFO SparkEnv: Registering BlockManagerMaster
+[2026-10-28T05:44:13.017+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-10-28T05:44:13.048+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-10-28T05:44:13.053+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-10-28T05:44:13.113+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-dad70c56-8928-4528-a4ff-65431b22ff75
+[2026-10-28T05:44:13.165+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-10-28T05:44:13.263+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-10-28T05:44:13.825+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:13 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-10-28T05:44:14.118+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-10-28T05:44:14.509+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2026-10-28T05:44:14.607+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.3:7077 after 54 ms (0 ms spent in bootstraps)
+[2026-10-28T05:44:14.801+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261028054414-0001
+[2026-10-28T05:44:14.804+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261028054414-0001/0 on worker-20261028053601-172.19.0.4-42155 (172.19.0.4:42155) with 2 core(s)
+[2026-10-28T05:44:14.809+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO StandaloneSchedulerBackend: Granted executor ID app-20261028054414-0001/0 on hostPort 172.19.0.4:42155 with 2 core(s), 1024.0 MiB RAM
+[2026-10-28T05:44:14.824+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34525.
+[2026-10-28T05:44:14.824+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO NettyBlockTransferService: Server created on 5c08e34f1ef7:34525
+[2026-10-28T05:44:14.829+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-10-28T05:44:14.848+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 5c08e34f1ef7, 34525, None)
+[2026-10-28T05:44:14.856+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO BlockManagerMasterEndpoint: Registering block manager 5c08e34f1ef7:34525 with 434.4 MiB RAM, BlockManagerId(driver, 5c08e34f1ef7, 34525, None)
+[2026-10-28T05:44:14.862+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 5c08e34f1ef7, 34525, None)
+[2026-10-28T05:44:14.865+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 5c08e34f1ef7, 34525, None)
+[2026-10-28T05:44:14.951+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:14 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261028054414-0001/0 is now RUNNING
+[2026-10-28T05:44:15.929+0000] {logging_mixin.py:188} INFO - 26/10/28 05:44:15 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2026-10-28T05:44:16.575+0000] {logging_mixin.py:188} INFO - ============================================================
+ BẮT ĐẦU PIPELINE ETL: BRONZE -> SILVER
+ Nguồn : hdfs://namenode:9000/lakehouse/bd05_tin_tuc/bronze/news_2021_2022.parquet
+ Đích  : hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/bai_viet_clean.parquet
+============================================================
+
+[Bước 1/6] Đang đọc dữ liệu Bronze từ HDFS...
+[2026-10-28T05:44:33.166+0000] {logging_mixin.py:188} INFO - -> Tổng số bản ghi thô (Bronze): 59,168
+
+[Bước 2/6] Làm sạch văn bản (HTML, Unicode NFC, khoảng trắng)...
+[2026-10-28T05:44:34.291+0000] {logging_mixin.py:188} INFO - 
+[Bước 3/6] Kiểm tra chất lượng dữ liệu...
+[2026-10-28T05:45:15.192+0000] {logging_mixin.py:188} INFO - -> Bản ghi hợp lệ: 51,620
+-> Bản ghi bị loại (rỗng/quá ngắn/thiếu ngày): 7,548 -> hdfs://namenode:9000/lakehouse/bd05_tin_tuc/_quarantine/bronze_to_silver.parquet
+[2026-10-28T05:45:18.258+0000] {logging_mixin.py:188} INFO - 
+[Bước 4/6] Khử trùng lặp chính xác (URL, SHA-256 nội dung)...
+[2026-10-28T05:45:35.089+0000] {logging_mixin.py:188} INFO - -> Trùng URL: 0 | Trùng nội dung: 549
+
+[Bước 5/6] Khử near-duplicate bằng SimHash 64-bit (Hamming <= 3)...
+[2026-10-28T05:45:40.010+0000] {logging_mixin.py:188} INFO - 26/10/28 05:45:40 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[2026-10-28T05:48:07.476+0000] {logging_mixin.py:188} INFO - -> Cặp near-duplicate: 140,944 | Bài bị loại: 3,095
+[2026-10-28T05:48:07.561+0000] {logging_mixin.py:188} INFO - 
+[Bước 6/6] Ghi Silver phân vùng theo 'crawled_date' vào hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/bai_viet_clean.parquet...
+[2026-10-28T05:52:26.560+0000] {logging_mixin.py:188} INFO - 
+--- BÁO CÁO TỶ LỆ TRÙNG LẶP ---
+ Bronze                    : 59,168
+ Không hợp lệ (quarantine) : 7,548 (12.76%)
+ Trùng URL                 : 0
+ Trùng nội dung (SHA-256)  : 549
+ Near-duplicate (SimHash)  : 3,095
+[2026-10-28T05:52:26.568+0000] {logging_mixin.py:188} INFO -  Tỷ lệ trùng lặp đã lọc    : 3,644 / 51,620 = 7.06%
+ Silver                    : 47,976 (81.08% của Bronze)
+[2026-10-28T05:52:26.570+0000] {logging_mixin.py:188} INFO - -> Đã lưu báo cáo vào: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/etl_quality_stats.parquet
+
+--- THỐNG KÊ PHÂN BỐ BẢN GHI THEO NGÀY (TOP 10 NGÀY) ---
+[2026-10-28T05:52:45.641+0000] {logging_mixin.py:188} INFO - +------------+-----+
+|crawled_date|count|
++------------+-----+
+|2022-06-30  |3847 |
+|2022-06-29  |3699 |
+|2022-06-28  |3252 |
+|2022-06-27  |3200 |
+|2022-06-26  |2504 |
+|2022-06-25  |2645 |
+|2022-06-24  |2966 |
+|2022-06-23  |2868 |
+|2022-06-22  |2713 |
+|2022-06-21  |2446 |
++------------+-----+
+only showing top 10 rows
+
+============================================================
+[2026-10-28T05:52:45.645+0000] {logging_mixin.py:188} INFO -  PIPELINE HOÀN TẤT THÀNH CÔNG TRONG 514.67 GIÂY
+============================================================
+[2026-10-28T05:52:51.463+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-28T05:52:51.503+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-28T05:52:51.871+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=bd05_2_etl_clean, task_id=bronze_to_silver, run_id=manual__2026-10-28T05:43:53.832981+00:00, execution_date=20261028T054353, start_date=20261028T054359, end_date=20261028T055251
+[2026-10-28T05:52:52.080+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-28T05:52:52.250+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-28T05:52:52.251+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

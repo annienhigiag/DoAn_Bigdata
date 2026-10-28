@@ -1,0 +1,23 @@
+[2026-10-28T06:38:54.236+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-28T06:38:54.262+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bd05_4_scoring_gold.sync_gold manual__2026-10-28T06:13:12.509084+00:00 [queued]>
+[2026-10-28T06:38:54.269+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bd05_4_scoring_gold.sync_gold manual__2026-10-28T06:13:12.509084+00:00 [queued]>
+[2026-10-28T06:38:54.270+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-28T06:38:54.287+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): sync_gold> on 2026-10-28 06:13:12.509084+00:00
+[2026-10-28T06:38:54.297+0000] {standard_task_runner.py:63} INFO - Started process 328 to run task
+[2026-10-28T06:38:54.302+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'bd05_4_scoring_gold', 'sync_gold', 'manual__2026-10-28T06:13:12.509084+00:00', '--job-id', '75', '--raw', '--subdir', 'DAGS_FOLDER/bd05_4_scoring_gold.py', '--cfg-path', '/tmp/tmpcz920thf']
+[2026-10-28T06:38:54.304+0000] {standard_task_runner.py:91} INFO - Job 75: Subtask sync_gold
+[2026-10-28T06:38:54.351+0000] {task_command.py:426} INFO - Running <TaskInstance: bd05_4_scoring_gold.sync_gold manual__2026-10-28T06:13:12.509084+00:00 [running]> on host 7b867548fade
+[2026-10-28T06:38:54.523+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='bd05_4_scoring_gold' AIRFLOW_CTX_TASK_ID='sync_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-10-28T06:13:12.509084+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-28T06:13:12.509084+00:00'
+[2026-10-28T06:38:54.525+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-28T06:38:55.022+0000] {logging_mixin.py:188} INFO - $ docker exec namenode rm -rf /tmp/gold
+[2026-10-28T06:38:55.334+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -get /lakehouse/bd05_tin_tuc/gold /tmp/gold
+[2026-10-28T06:38:58.696+0000] {logging_mixin.py:188} INFO - 2026-10-28 06:38:58,693 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-10-28T06:38:59.031+0000] {logging_mixin.py:188} INFO - 2026-10-28 06:38:59,029 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-10-28T06:38:59.106+0000] {logging_mixin.py:188} INFO - 2026-10-28 06:38:59,104 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-10-28T06:41:23.134+0000] {logging_mixin.py:188} INFO - -> Đã đồng bộ Gold về /opt/spark-apps/data/lakehouse/gold
+[2026-10-28T06:41:23.134+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-28T06:41:23.135+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-28T06:41:23.142+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=bd05_4_scoring_gold, task_id=sync_gold, run_id=manual__2026-10-28T06:13:12.509084+00:00, execution_date=20261028T061312, start_date=20261028T063854, end_date=20261028T064123
+[2026-10-28T06:41:23.202+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-28T06:41:23.221+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-28T06:41:23.222+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

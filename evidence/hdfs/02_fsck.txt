@@ -1,0 +1,31 @@
+$ docker exec namenode hdfs fsck /lakehouse/bd05_tin_tuc
+ Number of racks:		1
+ Total dirs:			214
+ Total symlinks:		0
+Replicated Blocks:
+ Total size:	404050423 B
+ Total files:	12375
+ Total blocks (validated):	12344 (avg. block size 32732 B)
+ Minimally replicated blocks:	12344 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	3
+ Average block replication:	3.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+FSCK ended at Wed Oct 28 14:22:32 UTC 2026 in 15816 milliseconds
+The filesystem under path '/lakehouse/bd05_tin_tuc' is HEALTHY

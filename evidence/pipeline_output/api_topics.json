@@ -1,0 +1,2526 @@
+{
+  "chu_de": [
+    {
+      "topic_id": 0,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện",
+      "tu_khoa": "y tế, bệnh, ca, bệnh viện, mắc, thuốc, covid, bệnh nhân, bác sĩ, tăng, điều trị, sức khỏe",
+      "trong_so": [
+        0.01375,
+        0.01375,
+        0.01266,
+        0.01159,
+        0.00805,
+        0.00743,
+        0.00734,
+        0.00726,
+        0.00712,
+        0.00675,
+        0.00536,
+        0.0052
+      ],
+      "tong_so_bai": 3268
+    },
+    {
+      "topic_id": 1,
+      "nhan_chu_de": "danviet, thịt, ăn, loại",
+      "tu_khoa": "danviet, thịt, ăn, loại, quả, rau, xe, vitamin, htm, cua, giúp, chất",
+      "trong_so": [
+        0.01119,
+        0.01015,
+        0.00955,
+        0.00919,
+        0.0084,
+        0.00832,
+        0.00814,
+        0.00708,
+        0.00632,
+        0.00603,
+        0.00531,
+        0.00524
+      ],
+      "tong_so_bai": 691
+    },
+    {
+      "topic_id": 2,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd",
+      "tu_khoa": "tỉnh, ban, bộ, ubnd, công an, cơ quan, tổ chức, công ty, đất, quyết định, huyện, sở",
+      "trong_so": [
+        0.0169,
+        0.0104,
+        0.01033,
+        0.00932,
+        0.00877,
+        0.00737,
+        0.00682,
+        0.00682,
+        0.00661,
+        0.00638,
+        0.00638,
+        0.00623
+      ],
+      "tong_so_bai": 4476
+    },
+    {
+      "topic_id": 3,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội",
+      "tu_khoa": "việt nam, công ty, chủ tịch, quốc hội, nước, quan hệ, dự án, thăm, chung, hợp tác, bị cáo, cao",
+      "trong_so": [
+        0.02624,
+        0.01647,
+        0.0154,
+        0.01038,
+        0.00767,
+        0.00759,
+        0.00752,
+        0.00691,
+        0.00656,
+        0.00614,
+        0.00536,
+        0.00533
+      ],
+      "tong_so_bai": 1553
+    },
+    {
+      "topic_id": 4,
+      "nhan_chu_de": "thi, trường, điểm, lớp",
+      "tu_khoa": "thi, trường, điểm, lớp, thí sinh, học sinh, lao động, thpt, môn, đại học, lương, học",
+      "trong_so": [
+        0.03691,
+        0.02678,
+        0.01981,
+        0.01873,
+        0.01524,
+        0.01294,
+        0.01172,
+        0.01066,
+        0.01012,
+        0.00924,
+        0.00909,
+        0.00882
+      ],
+      "tong_so_bai": 2144
+    },
+    {
+      "topic_id": 5,
+      "nhan_chu_de": "nhà, nước, nơi, độ",
+      "tu_khoa": "nhà, nước, nơi, độ, khiến, ăn, thấy, biển, nắng nóng, mạng, cách, mưa",
+      "trong_so": [
+        0.00694,
+        0.00615,
+        0.00575,
+        0.00566,
+        0.00505,
+        0.00478,
+        0.00453,
+        0.00449,
+        0.00437,
+        0.00417,
+        0.00414,
+        0.0038
+      ],
+      "tong_so_bai": 5341
+    },
+    {
+      "topic_id": 6,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh",
+      "tu_khoa": "công an, xe, huyện, tỉnh, xã, tuổi, đường, vụ, điều tra, cảnh sát, đối tượng, phường",
+      "trong_so": [
+        0.01828,
+        0.01416,
+        0.0133,
+        0.01245,
+        0.0114,
+        0.01048,
+        0.00995,
+        0.00906,
+        0.00758,
+        0.00703,
+        0.0066,
+        0.00649
+      ],
+      "tong_so_bai": 5452
+    },
+    {
+      "topic_id": 7,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ",
+      "tu_khoa": "việt nam, hoa hậu, đẹp, hoàn vũ, tiêm, thi, nhà, trẻ, thiết kế, top, mũi, bộ",
+      "trong_so": [
+        0.00994,
+        0.00932,
+        0.00545,
+        0.00469,
+        0.00468,
+        0.00447,
+        0.00413,
+        0.00408,
+        0.00406,
+        0.00383,
+        0.00367,
+        0.00364
+      ],
+      "tong_so_bai": 4033
+    },
+    {
+      "topic_id": 8,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ",
+      "tu_khoa": "việt nam, đội, tuổi, cầu thủ, giải, mùa, bóng, quang hải, gia đình, clb, hợp đồng, pháp",
+      "trong_so": [
+        0.00744,
+        0.00735,
+        0.00726,
+        0.00716,
+        0.00653,
+        0.00603,
+        0.00591,
+        0.00573,
+        0.00554,
+        0.00467,
+        0.00456,
+        0.00425
+      ],
+      "tong_so_bai": 5683
+    },
+    {
+      "topic_id": 9,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ",
+      "tu_khoa": "phim, diễn viên, khán giả, bộ, vai, nữ, tuổi, diễn, trịnh, campuchia, chính, ca sĩ",
+      "trong_so": [
+        0.02542,
+        0.01304,
+        0.01015,
+        0.01,
+        0.00868,
+        0.00843,
+        0.00756,
+        0.00708,
+        0.00644,
+        0.00632,
+        0.00483,
+        0.00477
+      ],
+      "tong_so_bai": 2498
+    },
+    {
+      "topic_id": 10,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu",
+      "tu_khoa": "nga, ukraine, mỹ, châu, trận, tổng thống, nước, nhà, việt nam, đội, âu, quốc gia",
+      "trong_so": [
+        0.022,
+        0.01821,
+        0.00905,
+        0.00799,
+        0.00607,
+        0.00588,
+        0.00559,
+        0.00498,
+        0.00455,
+        0.00446,
+        0.00444,
+        0.00402
+      ],
+      "tong_so_bai": 5876
+    },
+    {
+      "topic_id": 11,
+      "nhan_chu_de": "giá, tăng, việt nam, usd",
+      "tu_khoa": "giá, tăng, việt nam, usd, xe, thị trường, giảm, nhà, bán, cao, nước, đầu tư",
+      "trong_so": [
+        0.0161,
+        0.01369,
+        0.00888,
+        0.00826,
+        0.00749,
+        0.00737,
+        0.00706,
+        0.00655,
+        0.00654,
+        0.00634,
+        0.00609,
+        0.00603
+      ],
+      "tong_so_bai": 6961
+    }
+  ],
+  "theo_ngay": [
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-07",
+      "so_bai": 12,
+      "so_bai_tieu_cuc": 11,
+      "xac_suat_tb": 0.7906,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-07",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 9,
+      "xac_suat_tb": 0.7725,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-07",
+      "so_bai": 17,
+      "so_bai_tieu_cuc": 15,
+      "xac_suat_tb": 0.8284,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-07",
+      "so_bai": 2,
+      "so_bai_tieu_cuc": 1,
+      "xac_suat_tb": 0.7111,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-07",
+      "so_bai": 4,
+      "so_bai_tieu_cuc": 2,
+      "xac_suat_tb": 0.5898,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-07",
+      "so_bai": 25,
+      "so_bai_tieu_cuc": 18,
+      "xac_suat_tb": 0.656,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-07",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 9,
+      "xac_suat_tb": 0.798,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-07",
+      "so_bai": 28,
+      "so_bai_tieu_cuc": 24,
+      "xac_suat_tb": 0.7643,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-07",
+      "so_bai": 30,
+      "so_bai_tieu_cuc": 23,
+      "xac_suat_tb": 0.6911,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-07",
+      "so_bai": 10,
+      "so_bai_tieu_cuc": 9,
+      "xac_suat_tb": 0.7642,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-07",
+      "so_bai": 30,
+      "so_bai_tieu_cuc": 27,
+      "xac_suat_tb": 0.8108,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-07",
+      "so_bai": 33,
+      "so_bai_tieu_cuc": 26,
+      "xac_suat_tb": 0.7257,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-08",
+      "so_bai": 1,
+      "so_bai_tieu_cuc": 1,
+      "xac_suat_tb": 0.6409,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-08",
+      "so_bai": 2,
+      "so_bai_tieu_cuc": 2,
+      "xac_suat_tb": 0.5863,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-08",
+      "so_bai": 2,
+      "so_bai_tieu_cuc": 2,
+      "xac_suat_tb": 0.6872,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-08",
+      "so_bai": 5,
+      "so_bai_tieu_cuc": 5,
+      "xac_suat_tb": 0.6241,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-08",
+      "so_bai": 5,
+      "so_bai_tieu_cuc": 5,
+      "xac_suat_tb": 0.9416,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-08",
+      "so_bai": 1,
+      "so_bai_tieu_cuc": 1,
+      "xac_suat_tb": 0.5225,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-08",
+      "so_bai": 1,
+      "so_bai_tieu_cuc": 0,
+      "xac_suat_tb": 0.5112,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-08",
+      "so_bai": 2,
+      "so_bai_tieu_cuc": 2,
+      "xac_suat_tb": 0.5516,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-08",
+      "so_bai": 8,
+      "so_bai_tieu_cuc": 7,
+      "xac_suat_tb": 0.7713,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-09",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 11,
+      "xac_suat_tb": 0.6954,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-09",
+      "so_bai": 13,
+      "so_bai_tieu_cuc": 6,
+      "xac_suat_tb": 0.8361,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-09",
+      "so_bai": 11,
+      "so_bai_tieu_cuc": 11,
+      "xac_suat_tb": 0.7065,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-09",
+      "so_bai": 4,
+      "so_bai_tieu_cuc": 3,
+      "xac_suat_tb": 0.724,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-09",
+      "so_bai": 4,
+      "so_bai_tieu_cuc": 4,
+      "xac_suat_tb": 0.7745,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-09",
+      "so_bai": 32,
+      "so_bai_tieu_cuc": 27,
+      "xac_suat_tb": 0.6862,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-09",
+      "so_bai": 21,
+      "so_bai_tieu_cuc": 13,
+      "xac_suat_tb": 0.7739,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-09",
+      "so_bai": 28,
+      "so_bai_tieu_cuc": 22,
+      "xac_suat_tb": 0.6877,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-09",
+      "so_bai": 21,
+      "so_bai_tieu_cuc": 13,
+      "xac_suat_tb": 0.5978,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-09",
+      "so_bai": 17,
+      "so_bai_tieu_cuc": 14,
+      "xac_suat_tb": 0.6881,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-09",
+      "so_bai": 40,
+      "so_bai_tieu_cuc": 34,
+      "xac_suat_tb": 0.7841,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-09",
+      "so_bai": 32,
+      "so_bai_tieu_cuc": 26,
+      "xac_suat_tb": 0.737,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-10",
+      "so_bai": 53,
+      "so_bai_tieu_cuc": 40,
+      "xac_suat_tb": 0.7151,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-10",
+      "so_bai": 24,
+      "so_bai_tieu_cuc": 12,
+      "xac_suat_tb": 0.7835,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-10",
+      "so_bai": 66,
+      "so_bai_tieu_cuc": 54,
+      "xac_suat_tb": 0.6691,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-10",
+      "so_bai": 19,
+      "so_bai_tieu_cuc": 12,
+      "xac_suat_tb": 0.6083,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-10",
+      "so_bai": 42,
+      "so_bai_tieu_cuc": 37,
+      "xac_suat_tb": 0.7534,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-10",
+      "so_bai": 77,
+      "so_bai_tieu_cuc": 48,
+      "xac_suat_tb": 0.698,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-10",
+      "so_bai": 76,
+      "so_bai_tieu_cuc": 54,
+      "xac_suat_tb": 0.7737,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-10",
+      "so_bai": 73,
+      "so_bai_tieu_cuc": 60,
+      "xac_suat_tb": 0.6897,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-10",
+      "so_bai": 60,
+      "so_bai_tieu_cuc": 35,
+      "xac_suat_tb": 0.6635,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-10",
+      "so_bai": 36,
+      "so_bai_tieu_cuc": 25,
+      "xac_suat_tb": 0.675,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-10",
+      "so_bai": 138,
+      "so_bai_tieu_cuc": 93,
+      "xac_suat_tb": 0.8053,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-10",
+      "so_bai": 116,
+      "so_bai_tieu_cuc": 94,
+      "xac_suat_tb": 0.7263,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-11",
+      "so_bai": 19,
+      "so_bai_tieu_cuc": 12,
+      "xac_suat_tb": 0.68,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-11",
+      "so_bai": 5,
+      "so_bai_tieu_cuc": 3,
+      "xac_suat_tb": 0.7495,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-11",
+      "so_bai": 19,
+      "so_bai_tieu_cuc": 15,
+      "xac_suat_tb": 0.7896,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-11",
+      "so_bai": 5,
+      "so_bai_tieu_cuc": 4,
+      "xac_suat_tb": 0.5389,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-11",
+      "so_bai": 16,
+      "so_bai_tieu_cuc": 10,
+      "xac_suat_tb": 0.689,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-11",
+      "so_bai": 28,
+      "so_bai_tieu_cuc": 21,
+      "xac_suat_tb": 0.6,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-11",
+      "so_bai": 16,
+      "so_bai_tieu_cuc": 13,
+      "xac_suat_tb": 0.6653,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-11",
+      "so_bai": 21,
+      "so_bai_tieu_cuc": 18,
+      "xac_suat_tb": 0.6881,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-11",
+      "so_bai": 22,
+      "so_bai_tieu_cuc": 18,
+      "xac_suat_tb": 0.7065,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-11",
+      "so_bai": 20,
+      "so_bai_tieu_cuc": 16,
+      "xac_suat_tb": 0.644,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-11",
+      "so_bai": 53,
+      "so_bai_tieu_cuc": 39,
+      "xac_suat_tb": 0.8503,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-11",
+      "so_bai": 33,
+      "so_bai_tieu_cuc": 30,
+      "xac_suat_tb": 0.7658,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-12",
+      "so_bai": 24,
+      "so_bai_tieu_cuc": 19,
+      "xac_suat_tb": 0.8257,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-12",
+      "so_bai": 11,
+      "so_bai_tieu_cuc": 7,
+      "xac_suat_tb": 0.6974,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-12",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 12,
+      "xac_suat_tb": 0.6887,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-12",
+      "so_bai": 6,
+      "so_bai_tieu_cuc": 4,
+      "xac_suat_tb": 0.6196,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-12",
+      "so_bai": 19,
+      "so_bai_tieu_cuc": 15,
+      "xac_suat_tb": 0.7394,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-12",
+      "so_bai": 43,
+      "so_bai_tieu_cuc": 29,
+      "xac_suat_tb": 0.7106,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-12",
+      "so_bai": 21,
+      "so_bai_tieu_cuc": 15,
+      "xac_suat_tb": 0.7187,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-12",
+      "so_bai": 44,
+      "so_bai_tieu_cuc": 39,
+      "xac_suat_tb": 0.7235,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-12",
+      "so_bai": 25,
+      "so_bai_tieu_cuc": 19,
+      "xac_suat_tb": 0.6467,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-12",
+      "so_bai": 19,
+      "so_bai_tieu_cuc": 16,
+      "xac_suat_tb": 0.6774,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-12",
+      "so_bai": 58,
+      "so_bai_tieu_cuc": 46,
+      "xac_suat_tb": 0.8227,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-12",
+      "so_bai": 47,
+      "so_bai_tieu_cuc": 41,
+      "xac_suat_tb": 0.7395,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-13",
+      "so_bai": 107,
+      "so_bai_tieu_cuc": 84,
+      "xac_suat_tb": 0.7219,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-13",
+      "so_bai": 26,
+      "so_bai_tieu_cuc": 13,
+      "xac_suat_tb": 0.7992,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-13",
+      "so_bai": 126,
+      "so_bai_tieu_cuc": 101,
+      "xac_suat_tb": 0.6729,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-13",
+      "so_bai": 23,
+      "so_bai_tieu_cuc": 19,
+      "xac_suat_tb": 0.6012,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-13",
+      "so_bai": 74,
+      "so_bai_tieu_cuc": 65,
+      "xac_suat_tb": 0.7551,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-13",
+      "so_bai": 143,
+      "so_bai_tieu_cuc": 104,
+      "xac_suat_tb": 0.6661,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-13",
+      "so_bai": 213,
+      "so_bai_tieu_cuc": 132,
+      "xac_suat_tb": 0.8077,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-13",
+      "so_bai": 167,
+      "so_bai_tieu_cuc": 117,
+      "xac_suat_tb": 0.7035,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-13",
+      "so_bai": 163,
+      "so_bai_tieu_cuc": 117,
+      "xac_suat_tb": 0.7436,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-13",
+      "so_bai": 104,
+      "so_bai_tieu_cuc": 79,
+      "xac_suat_tb": 0.6253,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-13",
+      "so_bai": 278,
+      "so_bai_tieu_cuc": 220,
+      "xac_suat_tb": 0.8074,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-13",
+      "so_bai": 213,
+      "so_bai_tieu_cuc": 175,
+      "xac_suat_tb": 0.7508,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-14",
+      "so_bai": 114,
+      "so_bai_tieu_cuc": 92,
+      "xac_suat_tb": 0.7563,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-14",
+      "so_bai": 47,
+      "so_bai_tieu_cuc": 27,
+      "xac_suat_tb": 0.7737,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-14",
+      "so_bai": 174,
+      "so_bai_tieu_cuc": 127,
+      "xac_suat_tb": 0.7413,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-14",
+      "so_bai": 67,
+      "so_bai_tieu_cuc": 42,
+      "xac_suat_tb": 0.6223,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-14",
+      "so_bai": 80,
+      "so_bai_tieu_cuc": 69,
+      "xac_suat_tb": 0.7599,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-14",
+      "so_bai": 220,
+      "so_bai_tieu_cuc": 160,
+      "xac_suat_tb": 0.6596,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-14",
+      "so_bai": 222,
+      "so_bai_tieu_cuc": 142,
+      "xac_suat_tb": 0.7942,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-14",
+      "so_bai": 156,
+      "so_bai_tieu_cuc": 115,
+      "xac_suat_tb": 0.6895,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-14",
+      "so_bai": 195,
+      "so_bai_tieu_cuc": 129,
+      "xac_suat_tb": 0.7248,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-14",
+      "so_bai": 120,
+      "so_bai_tieu_cuc": 83,
+      "xac_suat_tb": 0.6706,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-14",
+      "so_bai": 243,
+      "so_bai_tieu_cuc": 170,
+      "xac_suat_tb": 0.8092,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-14",
+      "so_bai": 277,
+      "so_bai_tieu_cuc": 220,
+      "xac_suat_tb": 0.7546,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-15",
+      "so_bai": 129,
+      "so_bai_tieu_cuc": 103,
+      "xac_suat_tb": 0.7656,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-15",
+      "so_bai": 34,
+      "so_bai_tieu_cuc": 18,
+      "xac_suat_tb": 0.7195,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-15",
+      "so_bai": 189,
+      "so_bai_tieu_cuc": 143,
+      "xac_suat_tb": 0.7138,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-15",
+      "so_bai": 83,
+      "so_bai_tieu_cuc": 52,
+      "xac_suat_tb": 0.6354,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-15",
+      "so_bai": 82,
+      "so_bai_tieu_cuc": 70,
+      "xac_suat_tb": 0.7236,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-15",
+      "so_bai": 195,
+      "so_bai_tieu_cuc": 143,
+      "xac_suat_tb": 0.6661,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-15",
+      "so_bai": 229,
+      "so_bai_tieu_cuc": 139,
+      "xac_suat_tb": 0.8094,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-15",
+      "so_bai": 150,
+      "so_bai_tieu_cuc": 105,
+      "xac_suat_tb": 0.7139,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-15",
+      "so_bai": 176,
+      "so_bai_tieu_cuc": 131,
+      "xac_suat_tb": 0.7423,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-15",
+      "so_bai": 130,
+      "so_bai_tieu_cuc": 102,
+      "xac_suat_tb": 0.6776,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-15",
+      "so_bai": 303,
+      "so_bai_tieu_cuc": 211,
+      "xac_suat_tb": 0.8357,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-15",
+      "so_bai": 266,
+      "so_bai_tieu_cuc": 225,
+      "xac_suat_tb": 0.7529,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-16",
+      "so_bai": 113,
+      "so_bai_tieu_cuc": 87,
+      "xac_suat_tb": 0.7575,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-16",
+      "so_bai": 22,
+      "so_bai_tieu_cuc": 14,
+      "xac_suat_tb": 0.7731,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-16",
+      "so_bai": 179,
+      "so_bai_tieu_cuc": 151,
+      "xac_suat_tb": 0.7035,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-16",
+      "so_bai": 32,
+      "so_bai_tieu_cuc": 23,
+      "xac_suat_tb": 0.5899,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-16",
+      "so_bai": 94,
+      "so_bai_tieu_cuc": 78,
+      "xac_suat_tb": 0.7766,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-16",
+      "so_bai": 170,
+      "so_bai_tieu_cuc": 122,
+      "xac_suat_tb": 0.6628,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-16",
+      "so_bai": 192,
+      "so_bai_tieu_cuc": 121,
+      "xac_suat_tb": 0.8153,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-16",
+      "so_bai": 130,
+      "so_bai_tieu_cuc": 97,
+      "xac_suat_tb": 0.7025,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-16",
+      "so_bai": 195,
+      "so_bai_tieu_cuc": 146,
+      "xac_suat_tb": 0.7586,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-16",
+      "so_bai": 82,
+      "so_bai_tieu_cuc": 62,
+      "xac_suat_tb": 0.6882,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-16",
+      "so_bai": 227,
+      "so_bai_tieu_cuc": 164,
+      "xac_suat_tb": 0.8246,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-16",
+      "so_bai": 305,
+      "so_bai_tieu_cuc": 259,
+      "xac_suat_tb": 0.7498,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-17",
+      "so_bai": 139,
+      "so_bai_tieu_cuc": 106,
+      "xac_suat_tb": 0.7829,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-17",
+      "so_bai": 27,
+      "so_bai_tieu_cuc": 16,
+      "xac_suat_tb": 0.7662,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-17",
+      "so_bai": 245,
+      "so_bai_tieu_cuc": 184,
+      "xac_suat_tb": 0.7171,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-17",
+      "so_bai": 83,
+      "so_bai_tieu_cuc": 47,
+      "xac_suat_tb": 0.654,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-17",
+      "so_bai": 110,
+      "so_bai_tieu_cuc": 90,
+      "xac_suat_tb": 0.7844,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-17",
+      "so_bai": 203,
+      "so_bai_tieu_cuc": 156,
+      "xac_suat_tb": 0.6728,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-17",
+      "so_bai": 286,
+      "so_bai_tieu_cuc": 199,
+      "xac_suat_tb": 0.8044,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-17",
+      "so_bai": 155,
+      "so_bai_tieu_cuc": 116,
+      "xac_suat_tb": 0.6773,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-17",
+      "so_bai": 244,
+      "so_bai_tieu_cuc": 182,
+      "xac_suat_tb": 0.7254,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-17",
+      "so_bai": 115,
+      "so_bai_tieu_cuc": 93,
+      "xac_suat_tb": 0.6869,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-17",
+      "so_bai": 322,
+      "so_bai_tieu_cuc": 240,
+      "xac_suat_tb": 0.8083,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-17",
+      "so_bai": 334,
+      "so_bai_tieu_cuc": 275,
+      "xac_suat_tb": 0.756,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-18",
+      "so_bai": 116,
+      "so_bai_tieu_cuc": 92,
+      "xac_suat_tb": 0.7836,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-18",
+      "so_bai": 25,
+      "so_bai_tieu_cuc": 14,
+      "xac_suat_tb": 0.7118,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-18",
+      "so_bai": 141,
+      "so_bai_tieu_cuc": 99,
+      "xac_suat_tb": 0.6944,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-18",
+      "so_bai": 59,
+      "so_bai_tieu_cuc": 39,
+      "xac_suat_tb": 0.6237,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-18",
+      "so_bai": 163,
+      "so_bai_tieu_cuc": 140,
+      "xac_suat_tb": 0.8532,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-18",
+      "so_bai": 222,
+      "so_bai_tieu_cuc": 176,
+      "xac_suat_tb": 0.66,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-18",
+      "so_bai": 219,
+      "so_bai_tieu_cuc": 141,
+      "xac_suat_tb": 0.809,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-18",
+      "so_bai": 139,
+      "so_bai_tieu_cuc": 103,
+      "xac_suat_tb": 0.6551,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-18",
+      "so_bai": 248,
+      "so_bai_tieu_cuc": 171,
+      "xac_suat_tb": 0.7649,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-18",
+      "so_bai": 128,
+      "so_bai_tieu_cuc": 98,
+      "xac_suat_tb": 0.6616,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-18",
+      "so_bai": 275,
+      "so_bai_tieu_cuc": 214,
+      "xac_suat_tb": 0.7933,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-18",
+      "so_bai": 259,
+      "so_bai_tieu_cuc": 210,
+      "xac_suat_tb": 0.7757,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-19",
+      "so_bai": 130,
+      "so_bai_tieu_cuc": 111,
+      "xac_suat_tb": 0.7629,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-19",
+      "so_bai": 30,
+      "so_bai_tieu_cuc": 17,
+      "xac_suat_tb": 0.7184,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-19",
+      "so_bai": 126,
+      "so_bai_tieu_cuc": 96,
+      "xac_suat_tb": 0.7077,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-19",
+      "so_bai": 41,
+      "so_bai_tieu_cuc": 34,
+      "xac_suat_tb": 0.6333,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-19",
+      "so_bai": 118,
+      "so_bai_tieu_cuc": 99,
+      "xac_suat_tb": 0.8104,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-19",
+      "so_bai": 252,
+      "so_bai_tieu_cuc": 192,
+      "xac_suat_tb": 0.6846,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-19",
+      "so_bai": 207,
+      "so_bai_tieu_cuc": 143,
+      "xac_suat_tb": 0.8008,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-19",
+      "so_bai": 164,
+      "so_bai_tieu_cuc": 115,
+      "xac_suat_tb": 0.6733,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-19",
+      "so_bai": 245,
+      "so_bai_tieu_cuc": 173,
+      "xac_suat_tb": 0.771,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-19",
+      "so_bai": 119,
+      "so_bai_tieu_cuc": 93,
+      "xac_suat_tb": 0.6801,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-19",
+      "so_bai": 263,
+      "so_bai_tieu_cuc": 209,
+      "xac_suat_tb": 0.79,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-19",
+      "so_bai": 237,
+      "so_bai_tieu_cuc": 192,
+      "xac_suat_tb": 0.7447,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-20",
+      "so_bai": 174,
+      "so_bai_tieu_cuc": 138,
+      "xac_suat_tb": 0.7732,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-20",
+      "so_bai": 25,
+      "so_bai_tieu_cuc": 15,
+      "xac_suat_tb": 0.7482,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-20",
+      "so_bai": 222,
+      "so_bai_tieu_cuc": 180,
+      "xac_suat_tb": 0.7043,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-20",
+      "so_bai": 124,
+      "so_bai_tieu_cuc": 103,
+      "xac_suat_tb": 0.6981,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-20",
+      "so_bai": 97,
+      "so_bai_tieu_cuc": 79,
+      "xac_suat_tb": 0.7897,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-20",
+      "so_bai": 309,
+      "so_bai_tieu_cuc": 251,
+      "xac_suat_tb": 0.6581,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-20",
+      "so_bai": 261,
+      "so_bai_tieu_cuc": 189,
+      "xac_suat_tb": 0.8014,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-20",
+      "so_bai": 158,
+      "so_bai_tieu_cuc": 113,
+      "xac_suat_tb": 0.6975,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-20",
+      "so_bai": 310,
+      "so_bai_tieu_cuc": 248,
+      "xac_suat_tb": 0.7698,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-20",
+      "so_bai": 148,
+      "so_bai_tieu_cuc": 116,
+      "xac_suat_tb": 0.6497,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-20",
+      "so_bai": 320,
+      "so_bai_tieu_cuc": 255,
+      "xac_suat_tb": 0.8081,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-20",
+      "so_bai": 385,
+      "so_bai_tieu_cuc": 316,
+      "xac_suat_tb": 0.7549,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-21",
+      "so_bai": 157,
+      "so_bai_tieu_cuc": 138,
+      "xac_suat_tb": 0.7607,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-21",
+      "so_bai": 37,
+      "so_bai_tieu_cuc": 19,
+      "xac_suat_tb": 0.7614,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-21",
+      "so_bai": 214,
+      "so_bai_tieu_cuc": 174,
+      "xac_suat_tb": 0.7057,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-21",
+      "so_bai": 95,
+      "so_bai_tieu_cuc": 70,
+      "xac_suat_tb": 0.7207,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-21",
+      "so_bai": 70,
+      "so_bai_tieu_cuc": 58,
+      "xac_suat_tb": 0.7069,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-21",
+      "so_bai": 303,
+      "so_bai_tieu_cuc": 230,
+      "xac_suat_tb": 0.6749,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-21",
+      "so_bai": 236,
+      "so_bai_tieu_cuc": 152,
+      "xac_suat_tb": 0.7895,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-21",
+      "so_bai": 187,
+      "so_bai_tieu_cuc": 140,
+      "xac_suat_tb": 0.697,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-21",
+      "so_bai": 320,
+      "so_bai_tieu_cuc": 247,
+      "xac_suat_tb": 0.7475,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-21",
+      "so_bai": 115,
+      "so_bai_tieu_cuc": 97,
+      "xac_suat_tb": 0.6774,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-21",
+      "so_bai": 287,
+      "so_bai_tieu_cuc": 241,
+      "xac_suat_tb": 0.7929,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-21",
+      "so_bai": 425,
+      "so_bai_tieu_cuc": 343,
+      "xac_suat_tb": 0.7381,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-22",
+      "so_bai": 212,
+      "so_bai_tieu_cuc": 164,
+      "xac_suat_tb": 0.7486,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-22",
+      "so_bai": 32,
+      "so_bai_tieu_cuc": 20,
+      "xac_suat_tb": 0.6954,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-22",
+      "so_bai": 281,
+      "so_bai_tieu_cuc": 220,
+      "xac_suat_tb": 0.7707,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-22",
+      "so_bai": 90,
+      "so_bai_tieu_cuc": 62,
+      "xac_suat_tb": 0.7246,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-22",
+      "so_bai": 117,
+      "so_bai_tieu_cuc": 106,
+      "xac_suat_tb": 0.7753,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-22",
+      "so_bai": 289,
+      "so_bai_tieu_cuc": 221,
+      "xac_suat_tb": 0.6741,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-22",
+      "so_bai": 283,
+      "so_bai_tieu_cuc": 182,
+      "xac_suat_tb": 0.805,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-22",
+      "so_bai": 238,
+      "so_bai_tieu_cuc": 168,
+      "xac_suat_tb": 0.7047,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-22",
+      "so_bai": 321,
+      "so_bai_tieu_cuc": 244,
+      "xac_suat_tb": 0.7497,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-22",
+      "so_bai": 122,
+      "so_bai_tieu_cuc": 85,
+      "xac_suat_tb": 0.6351,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-22",
+      "so_bai": 313,
+      "so_bai_tieu_cuc": 252,
+      "xac_suat_tb": 0.7859,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-22",
+      "so_bai": 415,
+      "so_bai_tieu_cuc": 328,
+      "xac_suat_tb": 0.7475,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-23",
+      "so_bai": 223,
+      "so_bai_tieu_cuc": 173,
+      "xac_suat_tb": 0.7214,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-23",
+      "so_bai": 25,
+      "so_bai_tieu_cuc": 16,
+      "xac_suat_tb": 0.6847,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-23",
+      "so_bai": 323,
+      "so_bai_tieu_cuc": 248,
+      "xac_suat_tb": 0.7554,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-23",
+      "so_bai": 96,
+      "so_bai_tieu_cuc": 69,
+      "xac_suat_tb": 0.6802,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-23",
+      "so_bai": 127,
+      "so_bai_tieu_cuc": 105,
+      "xac_suat_tb": 0.7706,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-23",
+      "so_bai": 334,
+      "so_bai_tieu_cuc": 243,
+      "xac_suat_tb": 0.6624,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-23",
+      "so_bai": 284,
+      "so_bai_tieu_cuc": 159,
+      "xac_suat_tb": 0.8126,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-23",
+      "so_bai": 200,
+      "so_bai_tieu_cuc": 138,
+      "xac_suat_tb": 0.7057,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-23",
+      "so_bai": 386,
+      "so_bai_tieu_cuc": 264,
+      "xac_suat_tb": 0.7508,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-23",
+      "so_bai": 114,
+      "so_bai_tieu_cuc": 86,
+      "xac_suat_tb": 0.6279,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-23",
+      "so_bai": 350,
+      "so_bai_tieu_cuc": 249,
+      "xac_suat_tb": 0.7788,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-23",
+      "so_bai": 406,
+      "so_bai_tieu_cuc": 330,
+      "xac_suat_tb": 0.7415,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-24",
+      "so_bai": 207,
+      "so_bai_tieu_cuc": 171,
+      "xac_suat_tb": 0.7821,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-24",
+      "so_bai": 41,
+      "so_bai_tieu_cuc": 24,
+      "xac_suat_tb": 0.7676,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-24",
+      "so_bai": 254,
+      "so_bai_tieu_cuc": 200,
+      "xac_suat_tb": 0.6966,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-24",
+      "so_bai": 101,
+      "so_bai_tieu_cuc": 72,
+      "xac_suat_tb": 0.7002,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-24",
+      "so_bai": 166,
+      "so_bai_tieu_cuc": 128,
+      "xac_suat_tb": 0.8269,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-24",
+      "so_bai": 326,
+      "so_bai_tieu_cuc": 239,
+      "xac_suat_tb": 0.6705,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-24",
+      "so_bai": 393,
+      "so_bai_tieu_cuc": 251,
+      "xac_suat_tb": 0.8114,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-24",
+      "so_bai": 258,
+      "so_bai_tieu_cuc": 189,
+      "xac_suat_tb": 0.6805,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-24",
+      "so_bai": 325,
+      "so_bai_tieu_cuc": 227,
+      "xac_suat_tb": 0.7627,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-24",
+      "so_bai": 129,
+      "so_bai_tieu_cuc": 106,
+      "xac_suat_tb": 0.6671,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-24",
+      "so_bai": 342,
+      "so_bai_tieu_cuc": 264,
+      "xac_suat_tb": 0.8381,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-24",
+      "so_bai": 424,
+      "so_bai_tieu_cuc": 354,
+      "xac_suat_tb": 0.7515,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-25",
+      "so_bai": 179,
+      "so_bai_tieu_cuc": 141,
+      "xac_suat_tb": 0.7698,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-25",
+      "so_bai": 38,
+      "so_bai_tieu_cuc": 29,
+      "xac_suat_tb": 0.7353,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-25",
+      "so_bai": 255,
+      "so_bai_tieu_cuc": 210,
+      "xac_suat_tb": 0.7321,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-25",
+      "so_bai": 75,
+      "so_bai_tieu_cuc": 54,
+      "xac_suat_tb": 0.6245,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-25",
+      "so_bai": 104,
+      "so_bai_tieu_cuc": 80,
+      "xac_suat_tb": 0.7994,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-25",
+      "so_bai": 328,
+      "so_bai_tieu_cuc": 243,
+      "xac_suat_tb": 0.6865,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-25",
+      "so_bai": 294,
+      "so_bai_tieu_cuc": 159,
+      "xac_suat_tb": 0.8314,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-25",
+      "so_bai": 275,
+      "so_bai_tieu_cuc": 179,
+      "xac_suat_tb": 0.7625,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-25",
+      "so_bai": 332,
+      "so_bai_tieu_cuc": 236,
+      "xac_suat_tb": 0.7705,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-25",
+      "so_bai": 115,
+      "so_bai_tieu_cuc": 86,
+      "xac_suat_tb": 0.6524,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-25",
+      "so_bai": 270,
+      "so_bai_tieu_cuc": 213,
+      "xac_suat_tb": 0.8067,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-25",
+      "so_bai": 380,
+      "so_bai_tieu_cuc": 306,
+      "xac_suat_tb": 0.7265,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-26",
+      "so_bai": 145,
+      "so_bai_tieu_cuc": 111,
+      "xac_suat_tb": 0.756,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-26",
+      "so_bai": 48,
+      "so_bai_tieu_cuc": 33,
+      "xac_suat_tb": 0.6925,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-26",
+      "so_bai": 164,
+      "so_bai_tieu_cuc": 126,
+      "xac_suat_tb": 0.728,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-26",
+      "so_bai": 56,
+      "so_bai_tieu_cuc": 36,
+      "xac_suat_tb": 0.6945,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-26",
+      "so_bai": 76,
+      "so_bai_tieu_cuc": 64,
+      "xac_suat_tb": 0.7482,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-26",
+      "so_bai": 302,
+      "so_bai_tieu_cuc": 226,
+      "xac_suat_tb": 0.6797,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-26",
+      "so_bai": 342,
+      "so_bai_tieu_cuc": 211,
+      "xac_suat_tb": 0.8462,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-26",
+      "so_bai": 349,
+      "so_bai_tieu_cuc": 217,
+      "xac_suat_tb": 0.804,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-26",
+      "so_bai": 341,
+      "so_bai_tieu_cuc": 259,
+      "xac_suat_tb": 0.7695,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-26",
+      "so_bai": 104,
+      "so_bai_tieu_cuc": 76,
+      "xac_suat_tb": 0.6981,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-26",
+      "so_bai": 315,
+      "so_bai_tieu_cuc": 236,
+      "xac_suat_tb": 0.8055,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-26",
+      "so_bai": 262,
+      "so_bai_tieu_cuc": 204,
+      "xac_suat_tb": 0.7397,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-27",
+      "so_bai": 269,
+      "so_bai_tieu_cuc": 212,
+      "xac_suat_tb": 0.7635,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-27",
+      "so_bai": 44,
+      "so_bai_tieu_cuc": 30,
+      "xac_suat_tb": 0.714,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-27",
+      "so_bai": 235,
+      "so_bai_tieu_cuc": 187,
+      "xac_suat_tb": 0.7364,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-27",
+      "so_bai": 106,
+      "so_bai_tieu_cuc": 70,
+      "xac_suat_tb": 0.7143,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-27",
+      "so_bai": 138,
+      "so_bai_tieu_cuc": 117,
+      "xac_suat_tb": 0.7883,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-27",
+      "so_bai": 359,
+      "so_bai_tieu_cuc": 268,
+      "xac_suat_tb": 0.674,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-27",
+      "so_bai": 409,
+      "so_bai_tieu_cuc": 308,
+      "xac_suat_tb": 0.8248,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-27",
+      "so_bai": 300,
+      "so_bai_tieu_cuc": 222,
+      "xac_suat_tb": 0.7332,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-27",
+      "so_bai": 379,
+      "so_bai_tieu_cuc": 300,
+      "xac_suat_tb": 0.8034,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-27",
+      "so_bai": 178,
+      "so_bai_tieu_cuc": 145,
+      "xac_suat_tb": 0.7246,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-27",
+      "so_bai": 327,
+      "so_bai_tieu_cuc": 263,
+      "xac_suat_tb": 0.8159,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-27",
+      "so_bai": 456,
+      "so_bai_tieu_cuc": 377,
+      "xac_suat_tb": 0.7319,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-28",
+      "so_bai": 209,
+      "so_bai_tieu_cuc": 169,
+      "xac_suat_tb": 0.7515,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-28",
+      "so_bai": 31,
+      "so_bai_tieu_cuc": 20,
+      "xac_suat_tb": 0.7181,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-28",
+      "so_bai": 329,
+      "so_bai_tieu_cuc": 244,
+      "xac_suat_tb": 0.7309,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-28",
+      "so_bai": 113,
+      "so_bai_tieu_cuc": 81,
+      "xac_suat_tb": 0.7663,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-28",
+      "so_bai": 109,
+      "so_bai_tieu_cuc": 89,
+      "xac_suat_tb": 0.7414,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-28",
+      "so_bai": 369,
+      "so_bai_tieu_cuc": 269,
+      "xac_suat_tb": 0.6782,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-28",
+      "so_bai": 404,
+      "so_bai_tieu_cuc": 272,
+      "xac_suat_tb": 0.7742,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-28",
+      "so_bai": 271,
+      "so_bai_tieu_cuc": 177,
+      "xac_suat_tb": 0.6952,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-28",
+      "so_bai": 383,
+      "so_bai_tieu_cuc": 285,
+      "xac_suat_tb": 0.7873,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-28",
+      "so_bai": 160,
+      "so_bai_tieu_cuc": 132,
+      "xac_suat_tb": 0.665,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-28",
+      "so_bai": 344,
+      "so_bai_tieu_cuc": 277,
+      "xac_suat_tb": 0.8087,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-28",
+      "so_bai": 530,
+      "so_bai_tieu_cuc": 424,
+      "xac_suat_tb": 0.7601,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-29",
+      "so_bai": 251,
+      "so_bai_tieu_cuc": 217,
+      "xac_suat_tb": 0.7257,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-29",
+      "so_bai": 48,
+      "so_bai_tieu_cuc": 28,
+      "xac_suat_tb": 0.7416,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-29",
+      "so_bai": 378,
+      "so_bai_tieu_cuc": 304,
+      "xac_suat_tb": 0.7605,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-29",
+      "so_bai": 120,
+      "so_bai_tieu_cuc": 83,
+      "xac_suat_tb": 0.6764,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-29",
+      "so_bai": 166,
+      "so_bai_tieu_cuc": 133,
+      "xac_suat_tb": 0.7873,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-29",
+      "so_bai": 396,
+      "so_bai_tieu_cuc": 295,
+      "xac_suat_tb": 0.6931,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-29",
+      "so_bai": 413,
+      "so_bai_tieu_cuc": 253,
+      "xac_suat_tb": 0.8074,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-29",
+      "so_bai": 285,
+      "so_bai_tieu_cuc": 199,
+      "xac_suat_tb": 0.6924,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-29",
+      "so_bai": 481,
+      "so_bai_tieu_cuc": 357,
+      "xac_suat_tb": 0.7825,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-29",
+      "so_bai": 208,
+      "so_bai_tieu_cuc": 166,
+      "xac_suat_tb": 0.6905,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-29",
+      "so_bai": 376,
+      "so_bai_tieu_cuc": 278,
+      "xac_suat_tb": 0.8161,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-29",
+      "so_bai": 577,
+      "so_bai_tieu_cuc": 472,
+      "xac_suat_tb": 0.768,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    },
+    {
+      "topic_id": 0,
+      "crawled_date": "2022-06-30",
+      "so_bai": 270,
+      "so_bai_tieu_cuc": 210,
+      "xac_suat_tb": 0.7652,
+      "nhan_chu_de": "y tế, bệnh, ca, bệnh viện"
+    },
+    {
+      "topic_id": 1,
+      "crawled_date": "2022-06-30",
+      "so_bai": 43,
+      "so_bai_tieu_cuc": 27,
+      "xac_suat_tb": 0.6946,
+      "nhan_chu_de": "danviet, thịt, ăn, loại"
+    },
+    {
+      "topic_id": 2,
+      "crawled_date": "2022-06-30",
+      "so_bai": 511,
+      "so_bai_tieu_cuc": 432,
+      "xac_suat_tb": 0.7683,
+      "nhan_chu_de": "tỉnh, ban, bộ, ubnd"
+    },
+    {
+      "topic_id": 3,
+      "crawled_date": "2022-06-30",
+      "so_bai": 151,
+      "so_bai_tieu_cuc": 103,
+      "xac_suat_tb": 0.7099,
+      "nhan_chu_de": "việt nam, công ty, chủ tịch, quốc hội"
+    },
+    {
+      "topic_id": 4,
+      "crawled_date": "2022-06-30",
+      "so_bai": 168,
+      "so_bai_tieu_cuc": 139,
+      "xac_suat_tb": 0.8213,
+      "nhan_chu_de": "thi, trường, điểm, lớp"
+    },
+    {
+      "topic_id": 5,
+      "crawled_date": "2022-06-30",
+      "so_bai": 411,
+      "so_bai_tieu_cuc": 314,
+      "xac_suat_tb": 0.6918,
+      "nhan_chu_de": "nhà, nước, nơi, độ"
+    },
+    {
+      "topic_id": 6,
+      "crawled_date": "2022-06-30",
+      "so_bai": 411,
+      "so_bai_tieu_cuc": 292,
+      "xac_suat_tb": 0.8038,
+      "nhan_chu_de": "công an, xe, huyện, tỉnh"
+    },
+    {
+      "topic_id": 7,
+      "crawled_date": "2022-06-30",
+      "so_bai": 257,
+      "so_bai_tieu_cuc": 183,
+      "xac_suat_tb": 0.7099,
+      "nhan_chu_de": "việt nam, hoa hậu, đẹp, hoàn vũ"
+    },
+    {
+      "topic_id": 8,
+      "crawled_date": "2022-06-30",
+      "so_bai": 480,
+      "so_bai_tieu_cuc": 343,
+      "xac_suat_tb": 0.7984,
+      "nhan_chu_de": "việt nam, đội, tuổi, cầu thủ"
+    },
+    {
+      "topic_id": 9,
+      "crawled_date": "2022-06-30",
+      "so_bai": 204,
+      "so_bai_tieu_cuc": 145,
+      "xac_suat_tb": 0.6745,
+      "nhan_chu_de": "phim, diễn viên, khán giả, bộ"
+    },
+    {
+      "topic_id": 10,
+      "crawled_date": "2022-06-30",
+      "so_bai": 400,
+      "so_bai_tieu_cuc": 281,
+      "xac_suat_tb": 0.8323,
+      "nhan_chu_de": "nga, ukraine, mỹ, châu"
+    },
+    {
+      "topic_id": 11,
+      "crawled_date": "2022-06-30",
+      "so_bai": 541,
+      "so_bai_tieu_cuc": 448,
+      "xac_suat_tb": 0.7835,
+      "nhan_chu_de": "giá, tăng, việt nam, usd"
+    }
+  ]
+}

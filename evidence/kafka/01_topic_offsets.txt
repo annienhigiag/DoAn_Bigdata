@@ -1,0 +1,16 @@
+$ docker exec kafka kafka-topics --bootstrap-server kafka:9092 --list
+news-topic
+
+$ docker exec kafka kafka-topics --bootstrap-server kafka:9092 --describe --topic news-topic
+Topic: news-topic	TopicId: TIi9Z9s4RdWdsvXNAsogxQ	PartitionCount: 3	ReplicationFactor: 1	Configs: 
+	Topic: news-topic	Partition: 0	Leader: 1	Replicas: 1	Isr: 1
+	Topic: news-topic	Partition: 1	Leader: 1	Replicas: 1	Isr: 1
+	Topic: news-topic	Partition: 2	Leader: 1	Replicas: 1	Isr: 1
+
+$ docker exec kafka kafka-run-class kafka.tools.GetOffsetShell --broker-list kafka:9092 --topic news-topic   (offset cuối mỗi partition = số tin đã nhận)
+news-topic:0:52
+news-topic:1:59
+news-topic:2:189
+
+# Tổng: 52 + 59 + 189 = 300 tin trong topic news-topic (lần phát lại ngày 27/10/2026).
+# Spark Structured Streaming (src/streaming/spark_streaming_job.py) là consumer, checkpoint tại hdfs:///lakehouse/bd05_tin_tuc/checkpoints/.

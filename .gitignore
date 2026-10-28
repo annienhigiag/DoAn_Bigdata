@@ -30,3 +30,11 @@ Thumbs.db
 # Nhật ký và tệp tạm
 *.log
 scratch/
+
+# Biến môi trường chứa mật khẩu (dùng .env.example làm mẫu)
+.env
+
+# Bằng chứng chạy hệ thống cho hồ sơ nộp
+!evidence/**/*.json
+!evidence/**/*.log
+!evidence/**/*.txt

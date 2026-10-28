@@ -1,0 +1,196 @@
+{
+  "top_thuc_the": [
+    {
+      "entity": "Việt Nam",
+      "tong_so_bai": 2393,
+      "tong_tieu_cuc": 1679,
+      "z_max": 1.5,
+      "so_ngay_canh_bao": 0,
+      "ty_le_tieu_cuc": 70.2
+    },
+    {
+      "entity": "Nga",
+      "tong_so_bai": 2008,
+      "tong_tieu_cuc": 1626,
+      "z_max": 1.38,
+      "so_ngay_canh_bao": 0,
+      "ty_le_tieu_cuc": 81.0
+    },
+    {
+      "entity": "Ukraine",
+      "tong_so_bai": 1714,
+      "tong_tieu_cuc": 1367,
+      "z_max": 1.2,
+      "so_ngay_canh_bao": 0,
+      "ty_le_tieu_cuc": 79.8
+    },
+    {
+      "entity": "Mỹ",
+      "tong_so_bai": 1535,
+      "tong_tieu_cuc": 1127,
+      "z_max": 1.59,
+      "so_ngay_canh_bao": 0,
+      "ty_le_tieu_cuc": 73.4
+    },
+    {
+      "entity": "Trung Quốc",
+      "tong_so_bai": 935,
+      "tong_tieu_cuc": 696,
+      "z_max": 2.43,
+      "so_ngay_canh_bao": 1,
+      "ty_le_tieu_cuc": 74.4
+    },
+    {
+      "entity": "Hà Nội",
+      "tong_so_bai": 850,
+      "tong_tieu_cuc": 677,
+      "z_max": 2.38,
+      "so_ngay_canh_bao": 1,
+      "ty_le_tieu_cuc": 79.6
+    },
+    {
+      "entity": "Quang Hải",
+      "tong_so_bai": 397,
+      "tong_tieu_cuc": 339,
+      "z_max": 2.86,
+      "so_ngay_canh_bao": 2,
+      "ty_le_tieu_cuc": 85.4
+    },
+    {
+      "entity": "NATO",
+      "tong_so_bai": 331,
+      "tong_tieu_cuc": 271,
+      "z_max": 3.15,
+      "so_ngay_canh_bao": 2,
+      "ty_le_tieu_cuc": 81.9
+    },
+    {
+      "entity": "Thái Lan",
+      "tong_so_bai": 283,
+      "tong_tieu_cuc": 189,
+      "z_max": 1.79,
+      "so_ngay_canh_bao": 0,
+      "ty_le_tieu_cuc": 66.8
+    },
+    {
+      "entity": "Viettel",
+      "tong_so_bai": 258,
+      "tong_tieu_cuc": 167,
+      "z_max": 2.79,
+      "so_ngay_canh_bao": 2,
+      "ty_le_tieu_cuc": 64.7
+    }
+  ],
+  "dot_bien": [
+    {
+      "entity": "CDC Bình Phước",
+      "so_bai": 16,
+      "so_bai_tieu_cuc": 15,
+      "tb_so_bai": 0.67,
+      "do_lech_chuan": 3.27,
+      "z_score": 4.69,
+      "ty_le_tieu_cuc": 93.8,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-30"
+    },
+    {
+      "entity": "CTO Gianty Vietnam",
+      "so_bai": 24,
+      "so_bai_tieu_cuc": 11,
+      "tb_so_bai": 1.13,
+      "do_lech_chuan": 4.91,
+      "z_score": 4.66,
+      "ty_le_tieu_cuc": 45.8,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-14"
+    },
+    {
+      "entity": "Vũ Đức Đam",
+      "so_bai": 17,
+      "so_bai_tieu_cuc": 9,
+      "tb_so_bai": 1.0,
+      "do_lech_chuan": 3.49,
+      "z_score": 4.59,
+      "ty_le_tieu_cuc": 52.9,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-30"
+    },
+    {
+      "entity": "Tân Hoàng Minh",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 13,
+      "tb_so_bai": 1.0,
+      "do_lech_chuan": 3.06,
+      "z_score": 4.57,
+      "ty_le_tieu_cuc": 86.7,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-30"
+    },
+    {
+      "entity": "Ye Jin",
+      "so_bai": 9,
+      "so_bai_tieu_cuc": 8,
+      "tb_so_bai": 0.63,
+      "do_lech_chuan": 1.84,
+      "z_score": 4.56,
+      "ty_le_tieu_cuc": 88.9,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-27"
+    },
+    {
+      "entity": "Phnom Penh Crown",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 11,
+      "tb_so_bai": 0.92,
+      "do_lech_chuan": 3.09,
+      "z_score": 4.56,
+      "ty_le_tieu_cuc": 73.3,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-27"
+    },
+    {
+      "entity": "Thủ Thiêm",
+      "so_bai": 11,
+      "so_bai_tieu_cuc": 11,
+      "tb_so_bai": 0.71,
+      "do_lech_chuan": 2.27,
+      "z_score": 4.53,
+      "ty_le_tieu_cuc": 100.0,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-17"
+    },
+    {
+      "entity": "Nhĩ Kỳ",
+      "so_bai": 18,
+      "so_bai_tieu_cuc": 11,
+      "tb_so_bai": 1.46,
+      "do_lech_chuan": 3.66,
+      "z_score": 4.52,
+      "ty_le_tieu_cuc": 61.1,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-29"
+    },
+    {
+      "entity": "Hà Nội FC",
+      "so_bai": 15,
+      "so_bai_tieu_cuc": 14,
+      "tb_so_bai": 1.13,
+      "do_lech_chuan": 3.08,
+      "z_score": 4.5,
+      "ty_le_tieu_cuc": 93.3,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-26"
+    },
+    {
+      "entity": "Long Biên",
+      "so_bai": 13,
+      "so_bai_tieu_cuc": 8,
+      "tb_so_bai": 1.08,
+      "do_lech_chuan": 2.67,
+      "z_score": 4.46,
+      "ty_le_tieu_cuc": 61.5,
+      "muc_do_canh_bao": "Đột biến mạnh",
+      "crawled_date": "2022-06-27"
+    }
+  ]
+}

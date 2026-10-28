@@ -1,0 +1,32 @@
+[2026-10-27T16:25:52.970+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-27T16:25:53.006+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_2_etl_clean scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:25:53.018+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_2_etl_clean scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:25:53.018+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-27T16:25:53.038+0000] {taskinstance.py:2330} INFO - Executing <Task(TriggerDagRunOperator): run_bd05_2_etl_clean> on 2026-10-26 00:00:00+00:00
+[2026-10-27T16:25:53.048+0000] {standard_task_runner.py:63} INFO - Started process 146 to run task
+[2026-10-27T16:25:53.052+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'lakehouse_master_pipeline', 'run_bd05_2_etl_clean', 'scheduled__2026-10-26T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/lakehouse_master_dag.py', '--cfg-path', '/tmp/tmpx218a75x']
+[2026-10-27T16:25:53.055+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask run_bd05_2_etl_clean
+[2026-10-27T16:25:53.110+0000] {task_command.py:426} INFO - Running <TaskInstance: lakehouse_master_pipeline.run_bd05_2_etl_clean scheduled__2026-10-26T00:00:00+00:00 [running]> on host 7b867548fade
+[2026-10-27T16:25:53.192+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='lakehouse_master_pipeline' AIRFLOW_CTX_TASK_ID='run_bd05_2_etl_clean' AIRFLOW_CTX_EXECUTION_DATE='2026-10-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-10-26T00:00:00+00:00'
+[2026-10-27T16:25:53.192+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-27T16:25:53.502+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-27T16:25:53.504+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2026-10-27T16:25:53.510+0000] {taskinstance.py:2489} INFO - Pausing task as DEFERRED. dag_id=lakehouse_master_pipeline, task_id=run_bd05_2_etl_clean, run_id=scheduled__2026-10-26T00:00:00+00:00, execution_date=20261026T000000, start_date=20261027T162553
+[2026-10-27T16:25:53.547+0000] {local_task_job_runner.py:237} INFO - Task exited with return code 100 (task deferral)
+[2026-10-27T16:25:53.548+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-10-27T16:35:06.385+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-27T16:35:06.437+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_2_etl_clean scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:35:06.448+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_2_etl_clean scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:35:06.448+0000] {taskinstance.py:2304} INFO - Resuming after deferral
+[2026-10-27T16:35:06.465+0000] {taskinstance.py:2330} INFO - Executing <Task(TriggerDagRunOperator): run_bd05_2_etl_clean> on 2026-10-26 00:00:00+00:00
+[2026-10-27T16:35:06.476+0000] {standard_task_runner.py:63} INFO - Started process 172 to run task
+[2026-10-27T16:35:06.479+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'lakehouse_master_pipeline', 'run_bd05_2_etl_clean', 'scheduled__2026-10-26T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/lakehouse_master_dag.py', '--cfg-path', '/tmp/tmpx4b7jvjf']
+[2026-10-27T16:35:06.481+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask run_bd05_2_etl_clean
+[2026-10-27T16:35:06.544+0000] {task_command.py:426} INFO - Running <TaskInstance: lakehouse_master_pipeline.run_bd05_2_etl_clean scheduled__2026-10-26T00:00:00+00:00 [running]> on host 7b867548fade
+[2026-10-27T16:35:06.696+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-27T16:35:06.703+0000] {trigger_dagrun.py:258} INFO - bd05_2_etl_clean finished with allowed state success
+[2026-10-27T16:35:06.704+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-27T16:35:06.713+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=lakehouse_master_pipeline, task_id=run_bd05_2_etl_clean, run_id=scheduled__2026-10-26T00:00:00+00:00, execution_date=20261026T000000, start_date=20261027T162553, end_date=20261027T163506
+[2026-10-27T16:35:06.773+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-27T16:35:06.807+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-27T16:35:06.814+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

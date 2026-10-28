@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "version": 9,
+      "timestamp": "2026-10-28 06:55:08.328",
+      "operation": "VACUUM END",
+      "operation_parameters": "{\"status\":\"COMPLETED\"}",
+      "operation_metrics": "{\"numDeletedFiles\":\"0\",\"numVacuumedDirectories\":\"25\"}"
+    },
+    {
+      "version": 8,
+      "timestamp": "2026-10-28 06:55:03.47",
+      "operation": "VACUUM START",
+      "operation_parameters": "{\"retentionCheckEnabled\":\"false\",\"defaultRetentionMillis\":\"604800000\",\"specifiedRetentionMillis\":\"604800000\"}",
+      "operation_metrics": "{\"numFilesToDelete\":\"0\",\"sizeOfDataToDelete\":\"0\"}"
+    },
+    {
+      "version": 7,
+      "timestamp": "2026-10-28 06:51:28.245",
+      "operation": "OPTIMIZE",
+      "operation_parameters": "{\"predicate\":\"[]\",\"zOrderBy\":\"[\\\"source\\\"]\",\"clusterBy\":\"[]\",\"auto\":\"false\"}",
+      "operation_metrics": "{\"numRemovedFiles\":\"828\",\"numRemovedBytes\":\"11651167\",\"p25FileSize\":\"230636\",\"numDeletionVectorsRemoved\":\"0\",\"minFileSize\":\"8642\",\"numAddedFiles\":\"24\",\"maxFileSize\":\"545683\",\"p75FileSize\":\"409108\",\"p50FileSize\":\"323401\",\"numAddedBytes\":\"6911624\"}"
+    },
+    {
+      "version": 6,
+      "timestamp": "2026-10-28 06:49:36.185",
+      "operation": "MERGE",
+      "operation_parameters": "{\"predicate\":\"[\\\"(id#768L = id#1272L)\\\"]\",\"matchedPredicates\":\"[{\\\"actionType\\\":\\\"update\\\"}]\",\"notMatchedPredicates\":\"[]\",\"notMatchedBySourcePredicates\":\"[]\"}",
+      "operation_metrics": "{\"numTargetRowsCopied\":\"231\",\"numTargetRowsDeleted\":\"0\",\"numTargetFilesAdded\":\"2\",\"numTargetBytesAdded\":\"47038\",\"numTargetBytesRemoved\":\"47038\",\"numTargetDeletionVectorsAdded\":\"0\",\"numTargetRowsMatchedUpdated\":\"2\",\"executionTimeMs\":\"19400\",\"numTargetRowsInserted\":\"0\",\"numTargetRowsMatchedDeleted\":\"0\",\"numTargetDeletionVectorsUpdated\":\"0\",\"scanTimeMs\":\"16282\",\"numTargetRowsUpdated\":\"2\",\"numOutputRows\":\"233\",\"numTargetDeletionVectorsRemoved\":\"0\",\"numTargetRowsNotMatchedBySourceUpdated\":\"0\",\"numTargetChangeFilesAdded\":\"0\",\"numSourceRows\":\"2\",\"numTargetFilesRemoved\":\"2\",\"numTargetRowsNotMatchedBySourceDeleted\":\"0\",\"rewriteTimeMs\":\"2377\"}"
+    },
+    {
+      "version": 5,
+      "timestamp": "2026-10-28 06:48:54.985",
+      "operation": "WRITE",
+      "operation_parameters": "{\"mode\":\"Overwrite\",\"partitionBy\":\"[\\\"crawled_date\\\"]\"}",
+      "operation_metrics": "{\"numFiles\":\"828\",\"numOutputRows\":\"47976\",\"numOutputBytes\":\"11651167\"}"
+    },
+    {
+      "version": 4,
+      "timestamp": "2026-10-27 17:31:03.106",
+      "operation": "VACUUM END",
+      "operation_parameters": "{\"status\":\"COMPLETED\"}",
+      "operation_metrics": "{\"numDeletedFiles\":\"0\",\"numVacuumedDirectories\":\"25\"}"
+    },
+    {
+      "version": 3,
+      "timestamp": "2026-10-27 17:30:57.963",
+      "operation": "VACUUM START",
+      "operation_parameters": "{\"retentionCheckEnabled\":\"false\",\"defaultRetentionMillis\":\"604800000\",\"specifiedRetentionMillis\":\"604800000\"}",
+      "operation_metrics": "{\"numFilesToDelete\":\"0\",\"sizeOfDataToDelete\":\"0\"}"
+    },
+    {
+      "version": 2,
+      "timestamp": "2026-10-27 17:24:03.703",
+      "operation": "OPTIMIZE",
+      "operation_parameters": "{\"predicate\":\"[]\",\"zOrderBy\":\"[\\\"source\\\"]\",\"clusterBy\":\"[]\",\"auto\":\"false\"}",
+      "operation_metrics": "{\"numRemovedFiles\":\"828\",\"numRemovedBytes\":\"11651167\",\"p25FileSize\":\"230636\",\"numDeletionVectorsRemoved\":\"0\",\"minFileSize\":\"8642\",\"numAddedFiles\":\"24\",\"maxFileSize\":\"545683\",\"p75FileSize\":\"409108\",\"p50FileSize\":\"323401\",\"numAddedBytes\":\"6911624\"}"
+    },
+    {
+      "version": 1,
+      "timestamp": "2026-10-27 17:22:24.576",
+      "operation": "MERGE",
+      "operation_parameters": "{\"predicate\":\"[\\\"(id#443L = id#947L)\\\"]\",\"matchedPredicates\":\"[{\\\"actionType\\\":\\\"update\\\"}]\",\"notMatchedPredicates\":\"[]\",\"notMatchedBySourcePredicates\":\"[]\"}",
+      "operation_metrics": "{\"numTargetRowsCopied\":\"231\",\"numTargetRowsDeleted\":\"0\",\"numTargetFilesAdded\":\"2\",\"numTargetBytesAdded\":\"47038\",\"numTargetBytesRemoved\":\"47038\",\"numTargetDeletionVectorsAdded\":\"0\",\"numTargetRowsMatchedUpdated\":\"2\",\"executionTimeMs\":\"30903\",\"numTargetRowsInserted\":\"0\",\"numTargetRowsMatchedDeleted\":\"0\",\"numTargetDeletionVectorsUpdated\":\"0\",\"scanTimeMs\":\"26426\",\"numTargetRowsUpdated\":\"2\",\"numOutputRows\":\"233\",\"numTargetDeletionVectorsRemoved\":\"0\",\"numTargetRowsNotMatchedBySourceUpdated\":\"0\",\"numTargetChangeFilesAdded\":\"0\",\"numSourceRows\":\"2\",\"numTargetFilesRemoved\":\"2\",\"numTargetRowsNotMatchedBySourceDeleted\":\"0\",\"rewriteTimeMs\":\"2937\"}"
+    },
+    {
+      "version": 0,
+      "timestamp": "2026-10-27 17:20:56.064",
+      "operation": "WRITE",
+      "operation_parameters": "{\"mode\":\"Overwrite\",\"partitionBy\":\"[\\\"crawled_date\\\"]\"}",
+      "operation_metrics": "{\"numFiles\":\"828\",\"numOutputRows\":\"47976\",\"numOutputBytes\":\"11651167\"}"
+    }
+  ]
+}

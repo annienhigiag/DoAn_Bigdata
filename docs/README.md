@@ -99,6 +99,12 @@ Tải dataset từ Kaggle, giải nén và đặt file vào:
 data/raw_kaggle/news_dataset.json
 ```
 
+Tạo file `.env` chứa tài khoản Airflow (file này không được đưa lên git):
+
+```powershell
+Copy-Item .env.example .env   # rồi sửa AIRFLOW_ADMIN_USER / AIRFLOW_ADMIN_PASSWORD
+```
+
 ### Bước 3. Tạo môi trường Python trên máy host
 
 ```powershell
@@ -135,7 +141,7 @@ docker exec namenode hdfs dfsadmin -report | Select-String "Live datanodes"   # 
 | --- | --- | --- |
 | HDFS | http://localhost:9870 | Tab Datanodes có 3 node In Service |
 | Spark | http://localhost:8080 | 1 worker, 4 cores |
-| Airflow | http://localhost:8085 (admin / admin) | Thấy 7 DAG `bd05_*` và `lakehouse_master_pipeline` |
+| Airflow | http://localhost:8085 (tài khoản trong `.env`) | Thấy 7 DAG `bd05_*` và `lakehouse_master_pipeline` |
 
 ### Bước 6. Chạy pipeline dữ liệu (khoảng 1 giờ)
 

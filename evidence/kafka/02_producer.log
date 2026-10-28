@@ -1,0 +1,46 @@
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: key_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+ KAFKA PRODUCER REPLAY
+ Broker: localhost:9094 | Topic: news-topic
+-> Phát lại 200 bài từ 2022-06-19 00:01:32.979572 đến 2022-06-19 09:10:08.496703
+   đã phát 50/200 bài (31.8 bài/giây)
+   đã phát 100/200 bài (46.7 bài/giây)
+   đã phát 150/200 bài (55.5 bài/giây)
+   đã phát 200/200 bài (61.3 bài/giây)
+-> Hoàn tất phát 200 sự kiện vào 'news-topic'
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: key_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+ KAFKA PRODUCER REPLAY
+ Broker: localhost:9094 | Topic: news-topic
+-> Phát lại 100 bài từ 2022-06-28 00:05:42.916814 đến 2022-06-28 01:51:42.593140
+   đã phát 50/100 bài (43.8 bài/giây)
+   đã phát 100/100 bài (44.0 bài/giây)
+-> Hoàn tất phát 100 sự kiện vào 'news-topic'
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: key_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+ KAFKA PRODUCER REPLAY
+ Broker: localhost:9094 | Topic: news-topic
+-> Phát lại 100 bài từ 2022-06-14 10:53:44.800867 đến 2022-06-14 10:55:11.889113
+   đã phát 50/100 bài (43.4 bài/giây)
+   đã phát 100/100 bài (44.5 bài/giây)
+-> Hoàn tất phát 100 sự kiện vào 'news-topic'
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: key_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+D:\DH\BigData\DoAn\vietnamese-news-trend-and-sentiment\src\streaming\kafka_producer_news.py:43: DeprecationWarning: value_serializer does not implement kafka.serializer.Serializer
+  producer = get_kafka_producer(bootstrap_servers)
+ KAFKA PRODUCER REPLAY
+ Broker: localhost:9094 | Topic: news-topic
+-> Phát lại 300 bài từ 2022-06-20 00:02:26.771723 đến 2022-06-20 06:45:56.799571
+   đã phát 50/300 bài (10.4 bài/giây)
+   đã phát 100/300 bài (18.0 bài/giây)
+   đã phát 150/300 bài (24.0 bài/giây)
+   đã phát 200/300 bài (29.0 bài/giây)
+   đã phát 250/300 bài (33.3 bài/giây)
+   đã phát 300/300 bài (36.7 bài/giây)
+-> Hoàn tất phát 300 sự kiện vào 'news-topic'

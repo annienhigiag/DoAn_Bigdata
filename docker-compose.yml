@@ -160,14 +160,16 @@ services:
     image: apache/airflow:2.9.1
     container_name: airflow
     restart: always
-    command: standalone
+    # Xóa file PID cũ của webserver trước khi khởi động (tránh lỗi "Already running" sau khi máy tắt đột ngột)
+    command: bash -c "rm -f /opt/airflow/airflow-webserver*.pid && exec airflow standalone"
     environment:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
       - _AIRFLOW_DB_MIGRATE=true
       - _AIRFLOW_WWW_USER_CREATE=true
-      - _AIRFLOW_WWW_USER_USERNAME=admin
-      - _AIRFLOW_WWW_USER_PASSWORD=admin
+      # Tài khoản Airflow lấy từ file .env (không đưa lên git, xem .env.example)
+      - _AIRFLOW_WWW_USER_USERNAME=${AIRFLOW_ADMIN_USER}
+      - _AIRFLOW_WWW_USER_PASSWORD=${AIRFLOW_ADMIN_PASSWORD}
       # Cho phép Dashboard gọi REST API (trigger DAG) bằng basic auth
       - AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session
       # Webserver nhẹ hơn và chờ lâu hơn khi máy đang bận chạy Spark

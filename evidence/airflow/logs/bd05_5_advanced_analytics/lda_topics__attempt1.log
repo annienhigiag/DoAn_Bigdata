@@ -1,0 +1,103 @@
+[2026-10-27T17:39:27.242+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-27T17:39:27.309+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bd05_5_advanced_analytics.lda_topics manual__2026-10-27T17:17:04.146218+00:00 [queued]>
+[2026-10-27T17:39:27.325+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bd05_5_advanced_analytics.lda_topics manual__2026-10-27T17:17:04.146218+00:00 [queued]>
+[2026-10-27T17:39:27.325+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-27T17:39:27.382+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): lda_topics> on 2026-10-27 17:17:04.146218+00:00
+[2026-10-27T17:39:27.404+0000] {standard_task_runner.py:63} INFO - Started process 336 to run task
+[2026-10-27T17:39:27.431+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'bd05_5_advanced_analytics', 'lda_topics', 'manual__2026-10-27T17:17:04.146218+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/bd05_5_advanced_analytics.py', '--cfg-path', '/tmp/tmpkvdf87go']
+[2026-10-27T17:39:27.441+0000] {standard_task_runner.py:91} INFO - Job 25: Subtask lda_topics
+[2026-10-27T17:39:27.573+0000] {task_command.py:426} INFO - Running <TaskInstance: bd05_5_advanced_analytics.lda_topics manual__2026-10-27T17:17:04.146218+00:00 [running]> on host 7b867548fade
+[2026-10-27T17:39:27.724+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='bd05_5_advanced_analytics' AIRFLOW_CTX_TASK_ID='lda_topics' AIRFLOW_CTX_EXECUTION_DATE='2026-10-27T17:17:04.146218+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-27T17:17:04.146218+00:00'
+[2026-10-27T17:39:27.725+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-27T17:39:28.349+0000] {logging_mixin.py:188} INFO - $ docker exec spark-master spark-submit --master spark://spark-master:7077 --conf spark.driver.extraJavaOptions=-Dfile.encoding=UTF-8 --conf spark.executorEnv.PYTHONPATH=/opt/spark-apps --conf spark.executorEnv.PYTHONIOENCODING=utf-8 --conf spark.cores.max=2 /opt/spark-apps/src/jobs/lda_topic_job.py
+[2026-10-27T17:39:41.492+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SparkContext: Running Spark version 3.5.1
+[2026-10-27T17:39:41.499+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+[2026-10-27T17:39:41.500+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SparkContext: Java version 17.0.12
+[2026-10-27T17:39:41.563+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO ResourceUtils: ==============================================================
+[2026-10-27T17:39:41.564+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-10-27T17:39:41.565+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO ResourceUtils: ==============================================================
+[2026-10-27T17:39:41.568+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SparkContext: Submitted application: Lakehouse_LDA_Topic_Modeling
+[2026-10-27T17:39:41.632+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-10-27T17:39:41.648+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO ResourceProfile: Limiting resource is cpu
+[2026-10-27T17:39:41.649+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-10-27T17:39:41.779+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SecurityManager: Changing view acls to: spark
+[2026-10-27T17:39:41.781+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SecurityManager: Changing modify acls to: spark
+[2026-10-27T17:39:41.784+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SecurityManager: Changing view acls groups to:
+[2026-10-27T17:39:41.786+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SecurityManager: Changing modify acls groups to:
+[2026-10-27T17:39:41.789+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2026-10-27T17:39:41.929+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-10-27T17:39:42.866+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:42 INFO Utils: Successfully started service 'sparkDriver' on port 45127.
+[2026-10-27T17:39:42.965+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:42 INFO SparkEnv: Registering MapOutputTracker
+[2026-10-27T17:39:43.055+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO SparkEnv: Registering BlockManagerMaster
+[2026-10-27T17:39:43.097+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-10-27T17:39:43.099+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-10-27T17:39:43.111+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-10-27T17:39:43.192+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-7ccf87ff-3199-47d8-80bb-8dd4d150c80c
+[2026-10-27T17:39:43.246+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-10-27T17:39:43.293+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-10-27T17:39:43.582+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-10-27T17:39:43.722+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:43 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-10-27T17:39:44.020+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2026-10-27T17:39:44.170+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.4:7077 after 88 ms (0 ms spent in bootstraps)
+[2026-10-27T17:39:44.501+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261027173944-0008
+[2026-10-27T17:39:44.523+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261027173944-0008/0 on worker-20261027162036-172.19.0.9-37141 (172.19.0.9:37141) with 2 core(s)
+[2026-10-27T17:39:44.527+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42613.
+26/10/27 17:39:44 INFO StandaloneSchedulerBackend: Granted executor ID app-20261027173944-0008/0 on hostPort 172.19.0.9:37141 with 2 core(s), 1024.0 MiB RAM
+[2026-10-27T17:39:44.528+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO NettyBlockTransferService: Server created on 5c08e34f1ef7:42613
+[2026-10-27T17:39:44.534+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-10-27T17:39:44.557+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 5c08e34f1ef7, 42613, None)
+[2026-10-27T17:39:44.566+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO BlockManagerMasterEndpoint: Registering block manager 5c08e34f1ef7:42613 with 434.4 MiB RAM, BlockManagerId(driver, 5c08e34f1ef7, 42613, None)
+[2026-10-27T17:39:44.572+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 5c08e34f1ef7, 42613, None)
+[2026-10-27T17:39:44.576+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 5c08e34f1ef7, 42613, None)
+[2026-10-27T17:39:44.907+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:44 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261027173944-0008/0 is now RUNNING
+[2026-10-27T17:39:45.206+0000] {logging_mixin.py:188} INFO - 26/10/27 17:39:45 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2026-10-27T17:39:45.872+0000] {logging_mixin.py:188} INFO - ======================================================================
+ MÔ HÌNH CHỦ ĐỀ LDA (k = 12) TRÊN TẦNG SILVER
+======================================================================
+[2026-10-27T17:42:59.521+0000] {logging_mixin.py:188} INFO - -> Số bài: 47,976
+[2026-10-27T17:43:03.606+0000] {logging_mixin.py:188} INFO - 
+[1/3] Huấn luyện LDA...
+[2026-10-27T17:47:54.071+0000] {logging_mixin.py:188} INFO - -> Từ vựng: 8,000 từ | log-perplexity: 7.437
+
+[2/3] Trích từ khóa cho từng chủ đề...
+[2026-10-27T17:47:55.585+0000] {logging_mixin.py:188} INFO -    Chủ đề  0: bệnh, y tế, bệnh viện, ca, mắc, thuốc, bệnh nhân, bác sĩ, tăng, nước, loại, covid
+   Chủ đề  1: lương, lao động, luật, quy định, tối thiểu, bảo hiểm, vùng, danviet, nghị định, xã hội, đóng, tăng
+   Chủ đề  2: tỉnh, công an, huyện, ubnd, công ty, cơ quan, điều tra, bộ, ma túy, ban, xã, quyết định
+   Chủ đề  3: việt nam, đội, trận, giải, hlv, bóng đá, chủ tịch, thứ, quốc hội, châu, thi đấu, cầu thủ
+   Chủ đề  4: thi, trường, điểm, lớp, thí sinh, học sinh, thpt, môn, đại học, học, kỳ, chuyên
+   Chủ đề  5: phim, nhà, tuổi, khiến, mẹ, nữ, gia đình, cả, diễn viên, mạng, từng, tên
+   Chủ đề  6: xe, công an, đường, huyện, tuổi, xã, tỉnh, vụ, nhà, khoảng, giao thông, cảnh sát
+   Chủ đề  7: tiêm, mỹ, mũi, trẻ, việt nam, thiết kế, trung quốc, nhà, công nghệ, xe, mẫu, covid
+   Chủ đề  8: mùa, quang hải, cầu thủ, đội, bóng, hợp đồng, tuổi, clb, pháp, fc, pau, giải
+   Chủ đề  9: hoa hậu, việt nam, hoàn vũ, thi, bị cáo, top, án, tù, đẹp, xét xử, chung kết, tuổi
+   Chủ đề 10: nga, ukraine, mỹ, nước, tổng thống, châu, tàu, âu, quốc gia, lực lượng, thành phố, nato
+   Chủ đề 11: giá, tăng, việt nam, usd, cao, thị trường, giảm, đầu tư, nước, bán, nhà, xe
+[2026-10-27T17:47:58.411+0000] {logging_mixin.py:188} INFO - 
+[3/3] Gán chủ đề trội cho từng bài & tổng hợp theo ngày...
+[2026-10-27T17:48:55.181+0000] {logging_mixin.py:188} INFO - 26/10/27 17:48:55 WARN DAGScheduler: Broadcasting large task binary with size 1149.4 KiB
+[2026-10-27T17:49:51.025+0000] {logging_mixin.py:188} INFO - 26/10/27 17:49:51 WARN DAGScheduler: Broadcasting large task binary with size 1160.3 KiB
+[2026-10-27T17:50:31.341+0000] {logging_mixin.py:188} INFO - +--------+-----------+-------------------------------+
+|topic_id|tong_so_bai|nhan_chu_de                    |
++--------+-----------+-------------------------------+
+|0       |3584       |bệnh, y tế, bệnh viện, ca      |
+|1       |757        |lương, lao động, luật, quy định|
+|2       |5229       |tỉnh, công an, huyện, ubnd     |
+|3       |3417       |việt nam, đội, trận, giải      |
+|4       |1712       |thi, trường, điểm, lớp         |
+|5       |8973       |phim, nhà, tuổi, khiến         |
+|6       |5089       |xe, công an, đường, huyện      |
+|7       |2790       |tiêm, mỹ, mũi, trẻ             |
+|8       |2879       |mùa, quang hải, cầu thủ, đội   |
+|9       |1128       |hoa hậu, việt nam, hoàn vũ, thi|
+|10      |4839       |nga, ukraine, mỹ, nước         |
+|11      |7579       |giá, tăng, việt nam, usd       |
++--------+-----------+-------------------------------+
+
+-> Ghi hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/lda_chu_de.parquet, hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/lda_chu_de_theo_ngay.parquet, model hdfs://namenode:9000/lakehouse/bd05_tin_tuc/models/lda_model
+ HOÀN TẤT LDA TRONG 650.0 GIÂY
+[2026-10-27T17:50:34.755+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-27T17:50:34.771+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-27T17:50:34.893+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=bd05_5_advanced_analytics, task_id=lda_topics, run_id=manual__2026-10-27T17:17:04.146218+00:00, execution_date=20261027T171704, start_date=20261027T173927, end_date=20261027T175034
+[2026-10-27T17:50:35.064+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-27T17:50:35.192+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-27T17:50:35.198+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

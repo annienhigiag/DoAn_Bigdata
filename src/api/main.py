@@ -31,7 +31,22 @@ from pydantic import BaseModel, Field
 GOLD_DIR = os.environ.get("GOLD_DIR", os.path.join("data", "lakehouse", "gold"))
 FEEDBACK_FILE = os.environ.get("FEEDBACK_FILE", os.path.join("data", "writeback", "feedback.csv"))
 AIRFLOW_URL = os.environ.get("AIRFLOW_URL", "http://127.0.0.1:8085")
-AIRFLOW_AUTH = os.environ.get("AIRFLOW_AUTH", "admin:admin")
+
+
+def _load_dotenv(path=".env"):
+    """Nạp biến môi trường từ file .env ở thư mục gốc dự án (không ghi đè biến đã có)."""
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, value = line.split("=", 1)
+                os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
+
+_load_dotenv()
+AIRFLOW_AUTH = f"{os.environ.get('AIRFLOW_ADMIN_USER', '')}:{os.environ.get('AIRFLOW_ADMIN_PASSWORD', '')}"
 PIPELINE_DAGS = [
     "bd05_1_ingestion", "bd05_2_etl_clean", "bd05_3_ml_train",
     "bd05_4_scoring_gold", "bd05_5_advanced_analytics", "bd05_6_streaming",

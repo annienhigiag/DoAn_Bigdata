@@ -1,0 +1,162 @@
+{
+  "khoang_thoi_gian": {
+    "tu_ngay": "2022-06-07",
+    "den_ngay": "2022-06-30",
+    "so_ngay": 24
+  },
+  "so_nguon_bao": 26,
+  "so_chuyen_muc": 497,
+  "cam_xuc": {
+    "tong_so_bai": 47976,
+    "tich_cuc": 10359,
+    "trung_tinh": 1522,
+    "tieu_cuc": 36095,
+    "ty_le_tich_cuc": 21.59,
+    "ty_le_trung_tinh": 3.17,
+    "ty_le_tieu_cuc": 75.24
+  },
+  "canh_bao": {
+    "tong_su_kien": 335,
+    "khung_hoang": 123
+  },
+  "top_nguon_bao": [
+    {
+      "source": "laodong",
+      "tong_so_bai": 4419
+    },
+    {
+      "source": "24h.com.vn",
+      "tong_so_bai": 4299
+    },
+    {
+      "source": "thanhnien.vn",
+      "tong_so_bai": 4231
+    },
+    {
+      "source": "zingnews",
+      "tong_so_bai": 4188
+    },
+    {
+      "source": "vnexpress",
+      "tong_so_bai": 2930
+    },
+    {
+      "source": "dantri",
+      "tong_so_bai": 2835
+    },
+    {
+      "source": "vov.vn",
+      "tong_so_bai": 2451
+    },
+    {
+      "source": "danviet",
+      "tong_so_bai": 2344
+    },
+    {
+      "source": "vtv.vn",
+      "tong_so_bai": 2269
+    },
+    {
+      "source": "tienphong",
+      "tong_so_bai": 2261
+    }
+  ],
+  "top_chuyen_muc": [
+    {
+      "topic": "Thế giới",
+      "tong_so_bai": 3744
+    },
+    {
+      "topic": "Thể thao",
+      "tong_so_bai": 3054
+    },
+    {
+      "topic": "Pháp luật",
+      "tong_so_bai": 2711
+    },
+    {
+      "topic": "Xã hội",
+      "tong_so_bai": 2682
+    },
+    {
+      "topic": "",
+      "tong_so_bai": 2579
+    },
+    {
+      "topic": "Thời sự",
+      "tong_so_bai": 2347
+    },
+    {
+      "topic": "Kinh doanh",
+      "tong_so_bai": 2164
+    },
+    {
+      "topic": "Giải trí",
+      "tong_so_bai": 1567
+    },
+    {
+      "topic": "Sức khỏe",
+      "tong_so_bai": 1548
+    },
+    {
+      "topic": "Đời sống",
+      "tong_so_bai": 1327
+    }
+  ],
+  "chat_luong_etl": {
+    "run_at": "2026-10-28 05:52:23",
+    "bronze_records": 59168,
+    "invalid_records": 7548,
+    "valid_records": 51620,
+    "exact_url_duplicates": 0,
+    "exact_content_duplicates": 549,
+    "near_duplicate_pairs": 140944,
+    "near_duplicates": 3095,
+    "hamming_threshold": 3,
+    "duplicates_total": 3644,
+    "duplicate_rate_pct": 7.06,
+    "invalid_rate_pct": 12.76,
+    "silver_records": 47976,
+    "silver_rate_pct": 81.08
+  },
+  "mo_hinh_cam_xuc": {
+    "manual_200": {
+      "n_samples": 194.0,
+      "accuracy": 0.3505,
+      "macro_precision": 0.3261,
+      "macro_recall": 0.3684,
+      "macro_f1": 0.2867,
+      "weighted_f1": 0.2665,
+      "weighted_precision": 0.3226,
+      "weighted_recall": 0.3505,
+      "precision_class_0": 0.3592,
+      "recall_class_0": 0.7612,
+      "f1_class_0": 0.488,
+      "precision_class_1": 0.2857,
+      "recall_class_1": 0.025,
+      "f1_class_1": 0.046,
+      "precision_class_2": 0.3333,
+      "recall_class_2": 0.3191,
+      "f1_class_2": 0.3261
+    },
+    "test_split": {
+      "n_samples": 3265.0,
+      "accuracy": 0.8349,
+      "macro_precision": 0.6779,
+      "macro_recall": 0.7437,
+      "macro_f1": 0.6893,
+      "weighted_f1": 0.8516,
+      "weighted_precision": 0.8756,
+      "weighted_recall": 0.8349,
+      "precision_class_0": 0.8784,
+      "recall_class_0": 0.8379,
+      "f1_class_0": 0.8576,
+      "precision_class_1": 0.2262,
+      "recall_class_1": 0.5352,
+      "f1_class_1": 0.318,
+      "precision_class_2": 0.9291,
+      "recall_class_2": 0.8581,
+      "f1_class_2": 0.8922
+    }
+  }
+}

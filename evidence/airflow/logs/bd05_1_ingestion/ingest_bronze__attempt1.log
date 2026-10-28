@@ -1,0 +1,28 @@
+[2026-10-28T05:42:34.665+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-28T05:42:34.710+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bd05_1_ingestion.ingest_bronze manual__2026-10-28T05:38:19.763293+00:00 [queued]>
+[2026-10-28T05:42:34.723+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bd05_1_ingestion.ingest_bronze manual__2026-10-28T05:38:19.763293+00:00 [queued]>
+[2026-10-28T05:42:34.723+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-28T05:42:34.747+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): ingest_bronze> on 2026-10-28 05:38:19.763293+00:00
+[2026-10-28T05:42:34.758+0000] {standard_task_runner.py:63} INFO - Started process 118 to run task
+[2026-10-28T05:42:34.763+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'bd05_1_ingestion', 'ingest_bronze', 'manual__2026-10-28T05:38:19.763293+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/bd05_1_ingestion.py', '--cfg-path', '/tmp/tmpfovw4xyw']
+[2026-10-28T05:42:34.765+0000] {standard_task_runner.py:91} INFO - Job 55: Subtask ingest_bronze
+[2026-10-28T05:42:34.832+0000] {task_command.py:426} INFO - Running <TaskInstance: bd05_1_ingestion.ingest_bronze manual__2026-10-28T05:38:19.763293+00:00 [running]> on host 7b867548fade
+[2026-10-28T05:42:34.954+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='bd05_1_ingestion' AIRFLOW_CTX_TASK_ID='ingest_bronze' AIRFLOW_CTX_EXECUTION_DATE='2026-10-28T05:38:19.763293+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-28T05:38:19.763293+00:00'
+[2026-10-28T05:42:34.956+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-28T05:42:35.584+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/bronze
+[2026-10-28T05:42:39.578+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/silver
+[2026-10-28T05:42:43.354+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/gold
+[2026-10-28T05:42:47.753+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/models
+[2026-10-28T05:42:51.270+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/labels
+[2026-10-28T05:42:55.122+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/checkpoints
+[2026-10-28T05:42:59.578+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -mkdir -p /lakehouse/bd05_tin_tuc/_quarantine
+[2026-10-28T05:43:04.411+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -test -e /lakehouse/bd05_tin_tuc/bronze/news_2021_2022.parquet
+[2026-10-28T05:43:07.927+0000] {logging_mixin.py:188} INFO - -> Bronze đã có trên HDFS: /lakehouse/bd05_tin_tuc/bronze/news_2021_2022.parquet
+[2026-10-28T05:43:07.963+0000] {logging_mixin.py:188} INFO - $ docker exec namenode hdfs dfs -setrep 3 /lakehouse/bd05_tin_tuc/bronze/news_2021_2022.parquet
+[2026-10-28T05:43:10.713+0000] {logging_mixin.py:188} INFO - Replication 3 set: /lakehouse/bd05_tin_tuc/bronze/news_2021_2022.parquet
+[2026-10-28T05:43:11.204+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-28T05:43:11.205+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-28T05:43:11.218+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=bd05_1_ingestion, task_id=ingest_bronze, run_id=manual__2026-10-28T05:38:19.763293+00:00, execution_date=20261028T053819, start_date=20261028T054234, end_date=20261028T054311
+[2026-10-28T05:43:11.268+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-28T05:43:11.286+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-28T05:43:11.293+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

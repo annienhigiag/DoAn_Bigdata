@@ -1,0 +1,125 @@
+[2026-10-28T05:57:11.565+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-28T05:57:11.597+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bd05_3_ml_train.train_sentiment_model manual__2026-10-28T05:56:56.418543+00:00 [queued]>
+[2026-10-28T05:57:11.608+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bd05_3_ml_train.train_sentiment_model manual__2026-10-28T05:56:56.418543+00:00 [queued]>
+[2026-10-28T05:57:11.609+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-28T05:57:11.630+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_sentiment_model> on 2026-10-28 05:56:56.418543+00:00
+[2026-10-28T05:57:11.641+0000] {standard_task_runner.py:63} INFO - Started process 225 to run task
+[2026-10-28T05:57:11.645+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'bd05_3_ml_train', 'train_sentiment_model', 'manual__2026-10-28T05:56:56.418543+00:00', '--job-id', '65', '--raw', '--subdir', 'DAGS_FOLDER/bd05_3_ml_train.py', '--cfg-path', '/tmp/tmpklx9rsrv']
+[2026-10-28T05:57:11.647+0000] {standard_task_runner.py:91} INFO - Job 65: Subtask train_sentiment_model
+[2026-10-28T05:57:11.692+0000] {task_command.py:426} INFO - Running <TaskInstance: bd05_3_ml_train.train_sentiment_model manual__2026-10-28T05:56:56.418543+00:00 [running]> on host 7b867548fade
+[2026-10-28T05:57:11.790+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='bd05_3_ml_train' AIRFLOW_CTX_TASK_ID='train_sentiment_model' AIRFLOW_CTX_EXECUTION_DATE='2026-10-28T05:56:56.418543+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-28T05:56:56.418543+00:00'
+[2026-10-28T05:57:11.791+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-28T05:57:12.125+0000] {logging_mixin.py:188} INFO - $ docker exec spark-master spark-submit --master spark://spark-master:7077 --conf spark.driver.extraJavaOptions=-Dfile.encoding=UTF-8 --conf spark.executorEnv.PYTHONPATH=/opt/spark-apps --conf spark.executorEnv.PYTHONIOENCODING=utf-8 --conf spark.cores.max=2 /opt/spark-apps/src/models/train_sentiment_mllib.py
+[2026-10-28T05:57:19.955+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:19 INFO SparkContext: Running Spark version 3.5.1
+[2026-10-28T05:57:19.972+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:19 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+[2026-10-28T05:57:19.973+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:19 INFO SparkContext: Java version 17.0.12
+[2026-10-28T05:57:20.168+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO ResourceUtils: ==============================================================
+[2026-10-28T05:57:20.178+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-10-28T05:57:20.179+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO ResourceUtils: ==============================================================
+[2026-10-28T05:57:20.179+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO SparkContext: Submitted application: Train_Spark_MLlib_Sentiment
+[2026-10-28T05:57:20.269+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-10-28T05:57:20.285+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO ResourceProfile: Limiting resource is cpu
+[2026-10-28T05:57:20.287+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-10-28T05:57:20.365+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO SecurityManager: Changing view acls to: spark
+[2026-10-28T05:57:20.367+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO SecurityManager: Changing modify acls to: spark
+[2026-10-28T05:57:20.368+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO SecurityManager: Changing view acls groups to:
+[2026-10-28T05:57:20.370+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO SecurityManager: Changing modify acls groups to:
+[2026-10-28T05:57:20.372+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2026-10-28T05:57:20.452+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-10-28T05:57:21.045+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO Utils: Successfully started service 'sparkDriver' on port 46147.
+[2026-10-28T05:57:21.100+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO SparkEnv: Registering MapOutputTracker
+[2026-10-28T05:57:21.171+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO SparkEnv: Registering BlockManagerMaster
+[2026-10-28T05:57:21.200+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-10-28T05:57:21.211+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-10-28T05:57:21.216+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-10-28T05:57:21.273+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-b331a6b1-8445-4be2-855d-04309c873a7d
+[2026-10-28T05:57:21.301+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-10-28T05:57:21.334+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-10-28T05:57:21.518+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-10-28T05:57:21.632+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-10-28T05:57:21.839+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2026-10-28T05:57:21.928+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:21 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.3:7077 after 48 ms (0 ms spent in bootstraps)
+[2026-10-28T05:57:22.131+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261028055722-0003
+[2026-10-28T05:57:22.139+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261028055722-0003/0 on worker-20261028053601-172.19.0.4-42155 (172.19.0.4:42155) with 2 core(s)
+[2026-10-28T05:57:22.144+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO StandaloneSchedulerBackend: Granted executor ID app-20261028055722-0003/0 on hostPort 172.19.0.4:42155 with 2 core(s), 1024.0 MiB RAM
+[2026-10-28T05:57:22.150+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 35081.
+[2026-10-28T05:57:22.151+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO NettyBlockTransferService: Server created on 5c08e34f1ef7:35081
+[2026-10-28T05:57:22.155+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-10-28T05:57:22.175+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 5c08e34f1ef7, 35081, None)
+[2026-10-28T05:57:22.185+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO BlockManagerMasterEndpoint: Registering block manager 5c08e34f1ef7:35081 with 434.4 MiB RAM, BlockManagerId(driver, 5c08e34f1ef7, 35081, None)
+[2026-10-28T05:57:22.189+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 5c08e34f1ef7, 35081, None)
+[2026-10-28T05:57:22.193+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 5c08e34f1ef7, 35081, None)
+[2026-10-28T05:57:22.392+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261028055722-0003/0 is now RUNNING
+[2026-10-28T05:57:22.870+0000] {logging_mixin.py:188} INFO - 26/10/28 05:57:22 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2026-10-28T05:57:23.362+0000] {logging_mixin.py:188} INFO - =================================================================
+ BẮT ĐẦU HUẤN LUYỆN SPARK MLLIB: SENTIMENT ANALYSIS (VIETNAMESE)
+ Đích lưu trữ Model HDFS: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/models/sentiment_model
+=================================================================
+
+[Bước 1/5] Nạp dữ liệu có nhãn và chia Train/Test phân tầng (80/20)...
+[2026-10-28T05:59:25.519+0000] {logging_mixin.py:188} INFO - -> Nguồn dữ liệu: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/labels/sentiment_train.csv + 2 nhãn sửa tay từ Dashboard
+[2026-10-28T06:01:39.178+0000] {logging_mixin.py:188} INFO - -> Tập huấn luyện (Train): 12,911 bản ghi
+-> Tập kiểm thử (Test)  : 3,265 bản ghi
+
+[Bước 2/5] Đang khớp (fit) Spark MLlib Pipeline...
+[2026-10-28T06:02:10.771+0000] {logging_mixin.py:188} INFO - 26/10/28 06:02:10 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+[2026-10-28T06:02:10.790+0000] {logging_mixin.py:188} INFO - 26/10/28 06:02:10 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.VectorBLAS
+[2026-10-28T06:04:29.823+0000] {logging_mixin.py:188} INFO - -> Huấn luyện mô hình LogisticRegression hoàn tất!
+
+[Bước 3/5] Đánh giá trên tập Test...
+[2026-10-28T06:05:39.725+0000] {logging_mixin.py:188} INFO - ------------------------------------------------------------
+ ĐÁNH GIÁ TRÊN: test_split (3,265 mẫu)
+ Accuracy          : 83.49%
+ Macro-Precision   : 0.6779
+ Macro-Recall      : 0.7437
+ Macro-F1          : 0.6893
+ Weighted-F1       : 0.8516
+[2026-10-28T06:05:39.732+0000] {logging_mixin.py:188} INFO -    Lớp 0 (Tiêu cực): P=0.8784 R=0.8379 F1=0.8576
+   Lớp 1 (Trung tính): P=0.2262 R=0.5352 F1=0.3180
+   Lớp 2 (Tích cực): P=0.9291 R=0.8581 F1=0.8922
+ Ma trận nhầm lẫn (hàng = nhãn thật, cột = dự đoán 0/1/2):
+[2026-10-28T06:05:44.814+0000] {logging_mixin.py:188} INFO - +-----+----+---+----+
+|label|0.0 |1.0|2.0 |
++-----+----+---+----+
+|0    |1235|154|85  |
+|1    |43  |76 |23  |
+|2    |128 |106|1415|
++-----+----+---+----+
+
+------------------------------------------------------------
+
+[Bước 4/5] Đánh giá domain shift trên nhãn tay (nếu có)...
+[2026-10-28T06:07:48.063+0000] {logging_mixin.py:188} INFO - ------------------------------------------------------------
+ ĐÁNH GIÁ TRÊN: manual_200 (194 mẫu)
+ Accuracy          : 35.05%
+ Macro-Precision   : 0.3261
+ Macro-Recall      : 0.3684
+ Macro-F1          : 0.2867
+ Weighted-F1       : 0.2665
+   Lớp 0 (Tiêu cực): P=0.3592 R=0.7612 F1=0.4880
+   Lớp 1 (Trung tính): P=0.2857 R=0.0250 F1=0.0460
+   Lớp 2 (Tích cực): P=0.3333 R=0.3191 F1=0.3261
+ Ma trận nhầm lẫn (hàng = nhãn thật, cột = dự đoán 0/1/2):
+[2026-10-28T06:07:50.985+0000] {logging_mixin.py:188} INFO - +-----+---+---+---+
+|label|0.0|1.0|2.0|
++-----+---+---+---+
+|0    |51 |2  |14 |
+|1    |62 |2  |16 |
+|2    |29 |3  |15 |
++-----+---+---+---+
+
+------------------------------------------------------------
+[2026-10-28T06:07:55.386+0000] {logging_mixin.py:188} INFO - -> Đã lưu chỉ số đánh giá vào: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/sentiment_model_metrics.parquet
+[2026-10-28T06:07:55.470+0000] {logging_mixin.py:188} INFO - -> Đã ghi báo cáo: /opt/spark-apps/reports/mllib_metrics_latest.md
+[2026-10-28T06:07:55.472+0000] {logging_mixin.py:188} INFO - 
+[Bước 5/5] Đang lưu trữ PipelineModel lên HDFS: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/models/sentiment_model...
+[2026-10-28T06:07:59.366+0000] {logging_mixin.py:188} INFO - -> Đã lưu mô hình thành công lên HDFS!
+=================================================================
+ HOÀN TẤT HUẤN LUYỆN TRONG 639.56 GIÂY
+=================================================================
+[2026-10-28T06:08:07.870+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-28T06:08:07.917+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-28T06:08:08.392+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=bd05_3_ml_train, task_id=train_sentiment_model, run_id=manual__2026-10-28T05:56:56.418543+00:00, execution_date=20261028T055656, start_date=20261028T055711, end_date=20261028T060808
+[2026-10-28T06:08:08.583+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-28T06:08:08.815+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-10-28T06:08:08.817+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

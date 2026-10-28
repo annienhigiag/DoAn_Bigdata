@@ -118,7 +118,7 @@ docker compose up -d --build
 
 ### Bước 2: Chạy toàn bộ Data Pipeline
 
-**Cách 1 – Airflow (khuyến nghị khi demo):** mở [http://localhost:8085](http://localhost:8085) (admin/admin). Có 6 DAG chức năng và 1 DAG điều phối, mỗi task gọi `spark-submit` thật trong container `spark-master`:
+**Cách 1 – Airflow (khuyến nghị khi demo):** mở [http://localhost:8085](http://localhost:8085) (tài khoản đặt trong file `.env`). Có 6 DAG chức năng và 1 DAG điều phối, mỗi task gọi `spark-submit` thật trong container `spark-master`:
 
 | DAG | Nội dung |
 | :--- | :--- |

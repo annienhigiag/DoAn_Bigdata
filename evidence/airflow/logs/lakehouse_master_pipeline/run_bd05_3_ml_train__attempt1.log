@@ -1,0 +1,32 @@
+[2026-10-27T16:35:14.216+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-27T16:35:14.266+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_3_ml_train scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:35:14.277+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_3_ml_train scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:35:14.278+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-27T16:35:14.310+0000] {taskinstance.py:2330} INFO - Executing <Task(TriggerDagRunOperator): run_bd05_3_ml_train> on 2026-10-26 00:00:00+00:00
+[2026-10-27T16:35:14.322+0000] {standard_task_runner.py:63} INFO - Started process 182 to run task
+[2026-10-27T16:35:14.325+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'lakehouse_master_pipeline', 'run_bd05_3_ml_train', 'scheduled__2026-10-26T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/lakehouse_master_dag.py', '--cfg-path', '/tmp/tmpgv5vx0_9']
+[2026-10-27T16:35:14.328+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask run_bd05_3_ml_train
+[2026-10-27T16:35:14.387+0000] {task_command.py:426} INFO - Running <TaskInstance: lakehouse_master_pipeline.run_bd05_3_ml_train scheduled__2026-10-26T00:00:00+00:00 [running]> on host 7b867548fade
+[2026-10-27T16:35:14.476+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='lakehouse_master_pipeline' AIRFLOW_CTX_TASK_ID='run_bd05_3_ml_train' AIRFLOW_CTX_EXECUTION_DATE='2026-10-26T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-10-26T00:00:00+00:00'
+[2026-10-27T16:35:14.477+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-27T16:35:14.923+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-27T16:35:14.924+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2026-10-27T16:35:14.929+0000] {taskinstance.py:2489} INFO - Pausing task as DEFERRED. dag_id=lakehouse_master_pipeline, task_id=run_bd05_3_ml_train, run_id=scheduled__2026-10-26T00:00:00+00:00, execution_date=20261026T000000, start_date=20261027T163514
+[2026-10-27T16:35:14.982+0000] {local_task_job_runner.py:237} INFO - Task exited with return code 100 (task deferral)
+[2026-10-27T16:35:14.982+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2026-10-27T16:48:51.789+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-27T16:48:51.888+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_3_ml_train scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:48:51.904+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: lakehouse_master_pipeline.run_bd05_3_ml_train scheduled__2026-10-26T00:00:00+00:00 [queued]>
+[2026-10-27T16:48:51.905+0000] {taskinstance.py:2304} INFO - Resuming after deferral
+[2026-10-27T16:48:51.938+0000] {taskinstance.py:2330} INFO - Executing <Task(TriggerDagRunOperator): run_bd05_3_ml_train> on 2026-10-26 00:00:00+00:00
+[2026-10-27T16:48:51.958+0000] {standard_task_runner.py:63} INFO - Started process 214 to run task
+[2026-10-27T16:48:51.978+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'lakehouse_master_pipeline', 'run_bd05_3_ml_train', 'scheduled__2026-10-26T00:00:00+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/lakehouse_master_dag.py', '--cfg-path', '/tmp/tmpvmr06u3m']
+[2026-10-27T16:48:51.985+0000] {standard_task_runner.py:91} INFO - Job 14: Subtask run_bd05_3_ml_train
+[2026-10-27T16:48:52.080+0000] {task_command.py:426} INFO - Running <TaskInstance: lakehouse_master_pipeline.run_bd05_3_ml_train scheduled__2026-10-26T00:00:00+00:00 [running]> on host 7b867548fade
+[2026-10-27T16:48:52.226+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-27T16:48:52.232+0000] {trigger_dagrun.py:258} INFO - bd05_3_ml_train finished with allowed state success
+[2026-10-27T16:48:52.233+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-27T16:48:52.241+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=lakehouse_master_pipeline, task_id=run_bd05_3_ml_train, run_id=scheduled__2026-10-26T00:00:00+00:00, execution_date=20261026T000000, start_date=20261027T163514, end_date=20261027T164852
+[2026-10-27T16:48:52.310+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-27T16:48:52.350+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-27T16:48:52.363+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

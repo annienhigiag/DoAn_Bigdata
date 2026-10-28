@@ -1,0 +1,120 @@
+[2026-10-28T06:30:46.183+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-10-28T06:30:46.248+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: bd05_4_scoring_gold.publish_gold manual__2026-10-28T06:13:12.509084+00:00 [queued]>
+[2026-10-28T06:30:46.265+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: bd05_4_scoring_gold.publish_gold manual__2026-10-28T06:13:12.509084+00:00 [queued]>
+[2026-10-28T06:30:46.266+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-10-28T06:30:46.294+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): publish_gold> on 2026-10-28 06:13:12.509084+00:00
+[2026-10-28T06:30:46.309+0000] {standard_task_runner.py:63} INFO - Started process 308 to run task
+[2026-10-28T06:30:46.314+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'bd05_4_scoring_gold', 'publish_gold', 'manual__2026-10-28T06:13:12.509084+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/bd05_4_scoring_gold.py', '--cfg-path', '/tmp/tmpwh7unqjl']
+[2026-10-28T06:30:46.316+0000] {standard_task_runner.py:91} INFO - Job 73: Subtask publish_gold
+[2026-10-28T06:30:46.370+0000] {task_command.py:426} INFO - Running <TaskInstance: bd05_4_scoring_gold.publish_gold manual__2026-10-28T06:13:12.509084+00:00 [running]> on host 7b867548fade
+[2026-10-28T06:30:46.465+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='bd05_lakehouse_team' AIRFLOW_CTX_DAG_ID='bd05_4_scoring_gold' AIRFLOW_CTX_TASK_ID='publish_gold' AIRFLOW_CTX_EXECUTION_DATE='2026-10-28T06:13:12.509084+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-28T06:13:12.509084+00:00'
+[2026-10-28T06:30:46.466+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-10-28T06:30:46.917+0000] {logging_mixin.py:188} INFO - $ docker exec spark-master spark-submit --master spark://spark-master:7077 --conf spark.driver.extraJavaOptions=-Dfile.encoding=UTF-8 --conf spark.executorEnv.PYTHONPATH=/opt/spark-apps --conf spark.executorEnv.PYTHONIOENCODING=utf-8 --conf spark.cores.max=2 /opt/spark-apps/src/jobs/silver_to_gold_job.py
+[2026-10-28T06:30:53.646+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SparkContext: Running Spark version 3.5.1
+[2026-10-28T06:30:53.652+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+[2026-10-28T06:30:53.654+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SparkContext: Java version 17.0.12
+[2026-10-28T06:30:53.703+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO ResourceUtils: ==============================================================
+[2026-10-28T06:30:53.704+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-10-28T06:30:53.705+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO ResourceUtils: ==============================================================
+[2026-10-28T06:30:53.706+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SparkContext: Submitted application: Lakehouse_Gold_Aggregation_and_Anomaly_Detection
+[2026-10-28T06:30:53.742+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-10-28T06:30:53.756+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO ResourceProfile: Limiting resource is cpu
+[2026-10-28T06:30:53.758+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-10-28T06:30:53.837+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SecurityManager: Changing view acls to: spark
+[2026-10-28T06:30:53.839+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SecurityManager: Changing modify acls to: spark
+[2026-10-28T06:30:53.841+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SecurityManager: Changing view acls groups to:
+[2026-10-28T06:30:53.843+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SecurityManager: Changing modify acls groups to:
+[2026-10-28T06:30:53.845+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2026-10-28T06:30:53.963+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-10-28T06:30:54.462+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO Utils: Successfully started service 'sparkDriver' on port 40509.
+[2026-10-28T06:30:54.554+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO SparkEnv: Registering MapOutputTracker
+[2026-10-28T06:30:54.674+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO SparkEnv: Registering BlockManagerMaster
+[2026-10-28T06:30:54.722+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-10-28T06:30:54.724+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-10-28T06:30:54.742+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-10-28T06:30:54.825+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-3b6d181b-02a0-40f3-80ad-4f32288574f8
+[2026-10-28T06:30:54.871+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-10-28T06:30:54.912+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:54 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-10-28T06:30:55.205+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-10-28T06:30:55.351+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-10-28T06:30:55.751+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2026-10-28T06:30:55.824+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO TransportClientFactory: Successfully created connection to spark-master/172.19.0.3:7077 after 36 ms (0 ms spent in bootstraps)
+[2026-10-28T06:30:55.960+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20261028063055-0008
+[2026-10-28T06:30:55.972+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20261028063055-0008/0 on worker-20261028053601-172.19.0.4-42155 (172.19.0.4:42155) with 2 core(s)
+[2026-10-28T06:30:55.977+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO StandaloneSchedulerBackend: Granted executor ID app-20261028063055-0008/0 on hostPort 172.19.0.4:42155 with 2 core(s), 1024.0 MiB RAM
+[2026-10-28T06:30:55.984+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42789.
+[2026-10-28T06:30:55.985+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO NettyBlockTransferService: Server created on 5c08e34f1ef7:42789
+[2026-10-28T06:30:55.991+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:55 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-10-28T06:30:56.014+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 5c08e34f1ef7, 42789, None)
+[2026-10-28T06:30:56.023+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:56 INFO BlockManagerMasterEndpoint: Registering block manager 5c08e34f1ef7:42789 with 434.4 MiB RAM, BlockManagerId(driver, 5c08e34f1ef7, 42789, None)
+[2026-10-28T06:30:56.029+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 5c08e34f1ef7, 42789, None)
+[2026-10-28T06:30:56.033+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 5c08e34f1ef7, 42789, None)
+[2026-10-28T06:30:56.154+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:56 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20261028063055-0008/0 is now RUNNING
+[2026-10-28T06:30:56.636+0000] {logging_mixin.py:188} INFO - 26/10/28 06:30:56 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2026-10-28T06:30:57.100+0000] {logging_mixin.py:188} INFO - ===========================================================================
+ BẮT ĐẦU PIPELINE TỔNG HỢP TẦNG GOLD & PHÁT HIỆN ĐỘT BIẾN Z-SCORE
+ Nguồn vào (Silver) : hdfs://namenode:9000/lakehouse/bd05_tin_tuc/silver/news_sentiment.parquet
+ Đích Bảng 1 (Trend): hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/xu_huong_ngay.parquet
+ Đích Bảng 2 (Alert): hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/canh_bao_dot_bien.parquet
+===========================================================================
+
+[Bước 1/5] Đang nạp dữ liệu gán nhãn tầng Silver từ HDFS...
+[2026-10-28T06:31:38.492+0000] {logging_mixin.py:188} INFO - -> Tổng số bài báo nạp vào: 47,976 bài
+
+[Bước 2/5] Đang tổng hợp Bảng 1: gold.xu_huong_ngay (Đa chiều: Ngày - Chủ đề - Nguồn báo)...
+[2026-10-28T06:32:10.225+0000] {logging_mixin.py:188} INFO - -> Đã tổng hợp thành công 6,638 bản ghi xu hướng.
+-> Đang ghi Bảng 1 ra HDFS: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/xu_huong_ngay.parquet...
+[2026-10-28T06:32:42.188+0000] {logging_mixin.py:188} INFO - -> Ghi Bảng 1 thành công!
+
+[Bước 3/5] Đang tính toán chỉ số thống kê & Z-Score phát hiện đột biến truyền thông...
+[2026-10-28T06:32:43.360+0000] {logging_mixin.py:188} INFO - 
+[Bước 4/5] Đang ghi Bảng 2 ra HDFS: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/canh_bao_dot_bien.parquet...
+[2026-10-28T06:33:10.505+0000] {logging_mixin.py:188} INFO - -> Ghi Bảng 2 thành công!
+[2026-10-28T06:34:01.703+0000] {logging_mixin.py:188} INFO - -> Ghi bảng bài viết tiêu biểu: hdfs://namenode:9000/lakehouse/bd05_tin_tuc/gold/bai_viet_tieu_bieu.parquet
+
+--- TOP CÁC SỰ KIỆN ĐỘT BIẾN / KHỦNG HOẢNG TRUYỀN THÔNG (Z-SCORE >= 1.5) ---
+[2026-10-28T06:34:22.899+0000] {logging_mixin.py:188} INFO - -> Tổng số sự kiện chạm ngưỡng cảnh báo: 335 sự kiện.
+[2026-10-28T06:34:43.190+0000] {logging_mixin.py:188} INFO - +------------+--------------------+-----------+---------------+---------------+--------------------+--------------------+--------------+--------------+---------------------+
+|crawled_date|topic               |so_bai_ngay|so_bai_tieu_cuc|so_bai_tich_cuc|tb_so_bai_chuyen_muc|do_lech_chuan_so_bai|z_score_volume|z_score_crisis|muc_do_canh_bao      |
++------------+--------------------+-----------+---------------+---------------+--------------------+--------------------+--------------+--------------+---------------------+
+|2022-06-22  |QUÂN SỰ - QUỐC PHÒNG|4          |4              |0              |1.47                |0.77                |3.27          |3.26          |Khủng hoảng / Bùng nổ|
+|2022-06-22  |Hội nông dân        |7          |6              |1              |2.44                |1.75                |2.61          |3.17          |Khủng hoảng / Bùng nổ|
+|2022-06-13  |None                |168        |127            |37             |62.14               |36.72               |2.88          |3.15          |Khủng hoảng / Bùng nổ|
+|2022-06-13  |Sức mạnh số         |12         |12             |0              |5.17                |2.28                |2.99          |3.01          |Khủng hoảng / Bùng nổ|
+|2022-06-29  |Ô tô - Xe máy       |17         |14             |3              |7.39                |3.31                |2.9           |2.9           |Khủng hoảng / Bùng nổ|
+|2022-06-13  |Du lịch xanh        |5          |4              |0              |1.57                |1.09                |3.15          |2.86          |Khủng hoảng / Bùng nổ|
+|2022-06-26  |GIẢI TRÍ            |10         |8              |2              |3.86                |2.19                |2.8           |2.85          |Khủng hoảng / Bùng nổ|
+|2022-06-20  |Kết quả xổ số       |1          |1              |0              |1.0                 |0.0                 |0.0           |2.85          |Khủng hoảng / Bùng nổ|
+|2022-06-26  |Tài chính           |6          |6              |0              |2.05                |1.47                |2.68          |2.8           |Khủng hoảng / Bùng nổ|
+|2022-06-29  |Góc nhìn            |3          |3              |0              |1.32                |0.58                |2.89          |2.76          |Khủng hoảng / Bùng nổ|
+|2022-06-27  |Thời sự - Xã hội    |22         |18             |4              |10.78               |4.91                |2.29          |2.72          |Khủng hoảng / Bùng nổ|
+|2022-06-30  |                    |791        |598            |163            |135.74              |244.81              |2.68          |2.7           |Khủng hoảng / Bùng nổ|
+|2022-06-23  |Kinh tế vĩ mô       |5          |5              |0              |2.4                 |1.12                |2.32          |2.7           |Khủng hoảng / Bùng nổ|
+|2022-06-26  |House n Home        |3          |3              |0              |1.46                |0.66                |2.33          |2.68          |Khủng hoảng / Bùng nổ|
+|2022-06-13  |Ô tô                |14         |13             |1              |7.74                |2.49                |2.51          |2.62          |Khủng hoảng / Bùng nổ|
++------------+--------------------+-----------+---------------+---------------+--------------------+--------------------+--------------+--------------+---------------------+
+only showing top 15 rows
+
+
+--- MẪU 5 DÒNG DỮ LIỆU XU HƯỚNG TẦNG GOLD (BẢNG 1) ---
+[2026-10-28T06:34:58.724+0000] {logging_mixin.py:188} INFO - +------------+-----------+----------+-----------+---------------+-----------------+---------------+---------------+--------------+----------------+--------------+
+|crawled_date|topic      |source    |tong_so_bai|so_bai_tich_cuc|so_bai_trung_tinh|so_bai_tieu_cuc|diem_tin_cay_tb|ty_le_tich_cuc|ty_le_trung_tinh|ty_le_tieu_cuc|
++------------+-----------+----------+-----------+---------------+-----------------+---------------+---------------+--------------+----------------+--------------+
+|2022-06-29  |Chứng khoán|24h.com.vn|1          |0              |0                |1              |1.0            |0.0           |0.0             |100.0         |
+|2022-06-27  |Sao 360°   |docbao.vn |10         |1              |0                |9              |0.971          |10.0          |0.0             |90.0          |
+|2022-06-30  |Phóng sự   |tienphong |1          |1              |0                |0              |0.9438         |100.0         |0.0             |0.0           |
+|2022-06-24  |Đời sống   |kenh14    |6          |3              |0                |3              |0.888          |50.0          |0.0             |50.0          |
+|2022-06-28  |Ẩm thực    |24h.com.vn|3          |0              |0                |3              |0.9604         |0.0           |0.0             |100.0         |
++------------+-----------+----------+-----------+---------------+-----------------+---------------+---------------+--------------+----------------+--------------+
+only showing top 5 rows
+
+===========================================================================
+ PIPELINE TẦNG GOLD HOÀN TẤT THÀNH CÔNG TRONG 245.31 GIÂY
+ Các bảng Gold hiện sẵn sàng kết nối API FastAPI và Web Dashboard!
+===========================================================================
+[2026-10-28T06:34:59.672+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-10-28T06:34:59.673+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-10-28T06:34:59.684+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=bd05_4_scoring_gold, task_id=publish_gold, run_id=manual__2026-10-28T06:13:12.509084+00:00, execution_date=20261028T061312, start_date=20261028T063046, end_date=20261028T063459
+[2026-10-28T06:34:59.741+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-10-28T06:34:59.813+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-28T06:34:59.822+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

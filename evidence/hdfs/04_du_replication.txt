@@ -1,0 +1,11 @@
+$ docker exec namenode hdfs dfs -du -h /lakehouse/bd05_tin_tuc/*
+97.9 M   293.8 M  /lakehouse/bd05_tin_tuc/bronze
+272.9 M  818.8 M  /lakehouse/bd05_tin_tuc/silver
+11.1 M   33.2 M   /lakehouse/bd05_tin_tuc/gold
+963.4 K  2.8 M    /lakehouse/bd05_tin_tuc/models
+1.3 M    3.8 M    /lakehouse/bd05_tin_tuc/labels
+1.5 K    4.6 K    /lakehouse/bd05_tin_tuc/checkpoints
+1.2 M    3.6 M    /lakehouse/bd05_tin_tuc/_quarantine
+
+$ hdfs dfs -stat "%r %n" bronze (replication)
+replication=3 news_2021_2022.parquet

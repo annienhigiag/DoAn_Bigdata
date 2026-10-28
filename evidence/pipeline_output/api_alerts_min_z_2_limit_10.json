@@ -1,0 +1,126 @@
+{
+  "min_z": 2.0,
+  "tong_so": 123,
+  "data": [
+    {
+      "topic": "Điểm tin",
+      "so_bai_ngay": 2,
+      "so_bai_tieu_cuc": 1,
+      "so_bai_tich_cuc": 1,
+      "tb_so_bai_chuyen_muc": 1.06,
+      "do_lech_chuan_so_bai": 0.25,
+      "z_score_volume": 3.75,
+      "z_score_crisis": 0.37,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-15"
+    },
+    {
+      "topic": "Tấm lòng nhân ái",
+      "so_bai_ngay": 8,
+      "so_bai_tieu_cuc": 2,
+      "so_bai_tich_cuc": 6,
+      "tb_so_bai_chuyen_muc": 2.72,
+      "do_lech_chuan_so_bai": 1.6,
+      "z_score_volume": 3.3,
+      "z_score_crisis": 0.79,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-13"
+    },
+    {
+      "topic": "QUÂN SỰ - QUỐC PHÒNG",
+      "so_bai_ngay": 4,
+      "so_bai_tieu_cuc": 4,
+      "so_bai_tich_cuc": 0,
+      "tb_so_bai_chuyen_muc": 1.47,
+      "do_lech_chuan_so_bai": 0.77,
+      "z_score_volume": 3.27,
+      "z_score_crisis": 3.26,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-22"
+    },
+    {
+      "topic": "Hội nông dân",
+      "so_bai_ngay": 7,
+      "so_bai_tieu_cuc": 6,
+      "so_bai_tich_cuc": 1,
+      "tb_so_bai_chuyen_muc": 2.44,
+      "do_lech_chuan_so_bai": 1.75,
+      "z_score_volume": 2.61,
+      "z_score_crisis": 3.17,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-22"
+    },
+    {
+      "topic": "Du lịch xanh",
+      "so_bai_ngay": 5,
+      "so_bai_tieu_cuc": 4,
+      "so_bai_tich_cuc": 0,
+      "tb_so_bai_chuyen_muc": 1.57,
+      "do_lech_chuan_so_bai": 1.09,
+      "z_score_volume": 3.15,
+      "z_score_crisis": 2.86,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-13"
+    },
+    {
+      "topic": "None",
+      "so_bai_ngay": 168,
+      "so_bai_tieu_cuc": 127,
+      "so_bai_tich_cuc": 37,
+      "tb_so_bai_chuyen_muc": 62.14,
+      "do_lech_chuan_so_bai": 36.72,
+      "z_score_volume": 2.88,
+      "z_score_crisis": 3.15,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-13"
+    },
+    {
+      "topic": "Sức mạnh số",
+      "so_bai_ngay": 12,
+      "so_bai_tieu_cuc": 12,
+      "so_bai_tich_cuc": 0,
+      "tb_so_bai_chuyen_muc": 5.17,
+      "do_lech_chuan_so_bai": 2.28,
+      "z_score_volume": 2.99,
+      "z_score_crisis": 3.01,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-13"
+    },
+    {
+      "topic": "TV Show",
+      "so_bai_ngay": 14,
+      "so_bai_tieu_cuc": 5,
+      "so_bai_tich_cuc": 9,
+      "tb_so_bai_chuyen_muc": 5.72,
+      "do_lech_chuan_so_bai": 2.78,
+      "z_score_volume": 2.98,
+      "z_score_crisis": 0.73,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-26"
+    },
+    {
+      "topic": "Ô tô - Xe máy",
+      "so_bai_ngay": 17,
+      "so_bai_tieu_cuc": 14,
+      "so_bai_tich_cuc": 3,
+      "tb_so_bai_chuyen_muc": 7.39,
+      "do_lech_chuan_so_bai": 3.31,
+      "z_score_volume": 2.9,
+      "z_score_crisis": 2.9,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-29"
+    },
+    {
+      "topic": "Góc nhìn",
+      "so_bai_ngay": 3,
+      "so_bai_tieu_cuc": 3,
+      "so_bai_tich_cuc": 0,
+      "tb_so_bai_chuyen_muc": 1.32,
+      "do_lech_chuan_so_bai": 0.58,
+      "z_score_volume": 2.89,
+      "z_score_crisis": 2.76,
+      "muc_do_canh_bao": "Khủng hoảng / Bùng nổ",
+      "crawled_date": "2022-06-29"
+    }
+  ]
+}
